@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/top_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="@drawable/nav_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/map_menu_title"
+            android:textSize="25sp"
+            android:textColor="#000" 
+            />
+
+        <ImageView
+            android:id="@+id/logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/logos" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="27dp"
+            android:textSize="20sp" 
+            android:text="@string/initmark_proname" />
+
+        <TextView
+             android:id="@+id/projectname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+             android:textSize="20sp" 
+            android:text="" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+        android:layout_weight="0.86"
+        android:id="@+id/RelativeLayout">"
+
+    
+    </RelativeLayout>
+
+    <!-- 3D图菜单条 -->
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:background="#CEDCD4" >
+        
+		<LinearLayout
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/blue_button"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/mapCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_view_cn"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/mapEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/top_view_en"
+                android:textColor="#000"
+                android:textSize="25sp" />
+        </LinearLayout>
+        
+       <LinearLayout
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+             android:background="@drawable/yellow_button"
+            android:orientation="vertical" >
+
+           <TextView
+                android:id="@+id/settingCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vertical_view_cn"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/settingEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vertical_view_en"
+                android:textColor="#000"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/green_button"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/exportCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/left_view_cn"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/exportEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/left_view_en"
+                android:textColor="#000"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:background="#ffffff"
+         >
+
+         <Button
+             android:id="@+id/button1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_centerVertical="true"
+             android:layout_marginLeft="21dp"
+             android:background="#104379"
+             android:text="顶视图" />
+
+         <Button
+             android:id="@+id/button3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignBaseline="@+id/button1"
+             android:layout_alignBottom="@+id/button1"
+             android:layout_centerHorizontal="true"
+             android:background="#104379"
+             android:text="左视图" />
+
+         <Button
+             android:id="@+id/button2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             android:layout_marginRight="21dp"
+             android:background="#104379"
+             android:text="主视图" />
+
+    </RelativeLayout>
+ -->
+</LinearLayout>

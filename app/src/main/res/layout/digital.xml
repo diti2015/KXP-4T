@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/tt"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        android:gravity="center"
+        android:textSize="20sp" />
+    <!-- 
+    <TextView
+        android:id="@+id/t0"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:ems="20"
+        android:gravity="center"
+        android:textSize="20sp" />
+ -->
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:ems="20"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:ems="20"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:ems="20"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+</LinearLayout>

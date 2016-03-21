@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liqin.instrument"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />  
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/> 
+	
+    <application
+        android:icon="@drawable/logo22"
+        android:label="@string/app_name"
+         >
+        <activity
+            android:name="com.example.android.BluetoothChat.main"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.example.android.BluetoothChat.Online"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait" />
+          <activity
+            android:name="com.example.android.BluetoothChat.RotateRPolygon"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.example.android.BluetoothChat.tesy123"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.example.android.BluetoothChat.InitMark"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.example.android.BluetoothChat.Mark"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.android.BluetoothChat.BluetoothChat"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.android.BluetoothChat.Setting"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.android.BluetoothChat.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/autocontdevice"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.throne.digtool.Draw3D"
+            android:label="@string/app_name"
+             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.throne.digtool.MainActivity"
+            android:label="@string/app_name"
+             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+             android:screenOrientation="portrait" />
+       
+        <activity
+            android:name="com.example.android.BluetoothChat.DeviceListActivityAuto"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.android.BluetoothChat.logs"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/logs"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name="com.example.android.BluetoothChat.waitting"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait" />
+		<activity
+            android:name="com.example.android.BluetoothChat.Progress"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Dialog"
+            android:label="@string/download"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name="com.example.android.BluetoothChat.BluetoothChat$Receiver"
+            android:enabled="true" >
+            <intent-filter>
+				 <action android:name="com.example.android.BluetoothChat" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.android.BluetoothChat.Online$Receiver"
+            android:enabled="true" >
+            <intent-filter>
+				 <action android:name="com.example.android.BluetoothChat" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.android.BluetoothChat.Mark$Receiver"
+            android:enabled="true" >
+            <intent-filter>
+				 <action android:name="com.example.android.BluetoothChat" />
+            </intent-filter>
+        </receiver>
+         <receiver
+            android:name="com.example.android.BluetoothChat.InitMark$Receiver"
+            android:enabled="true" >
+            <intent-filter>
+				 <action android:name="com.example.android.BluetoothChat" />
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.example.android.BluetoothChat.KeepService" />  
+    </application>
+
+</manifest>

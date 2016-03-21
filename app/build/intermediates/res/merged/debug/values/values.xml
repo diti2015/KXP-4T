@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="MarkDepth">深度#</string>
+    <string name="MarkDip">倾角#</string>
+    <string name="MarkId">序号#</string>
+    <string name="MarkOrientation">方位#</string>
+    <string name="MarkTime">记录时间#</string>
+    <string name="app_name">LIQING</string>
+    <string name="autocontdevice">正在智能识别设备，请稍后</string>
+    <string name="bluetoothisopened">蓝牙已开启</string>
+    <string name="bluetoothsuccess">蓝牙开启成功</string>
+    <string name="bt_not_enabled_leaving">蓝牙开启失败，请允许开启蓝牙后，再重试。</string>
+    <string name="bulebooth_type">蓝牙状态：</string>
+    <string name="button_scan">搜索设备</string>
+    <string name="celiang_menu_title">测量</string>
+    <string name="celiangcn">测量</string>
+    <string name="celiangen">Survey</string>
+    <string name="changedevice">搜索设备</string>
+    <string name="chayue_menu_title">查阅</string>
+    <string name="chayuecn">查阅</string>
+    <string name="chayueen">Result</string>
+    <string name="clearzero_cn">参数置零</string>
+    <string name="clearzero_en">Zero Set</string>
+    <string name="close">关</string>
+    <string name="colgreen">#008000</string>
+    <string name="colred">#ff0000</string>
+    <string name="company">上海力擎地质仪器有限公司</string>
+    <string name="connect">connect a device</string>
+    <string name="conntectedfailed">连接失败，原因：设备没有响应，错误代码：102</string>
+    <string name="conntecting">正在连接</string>
+    <string name="conntectingfailed">关闭socket失败，错误代码：103</string>
+    <string name="conntedclose">设备连接已断开</string>
+    <string name="creatfailed">创建文件夹失败!!!!</string>
+    <string name="creatfolder">创建文件夹成功</string>
+    <string name="d_dip">顶角</string>
+    <string name="d_orientation">方位</string>
+    <string name="dataflowfailed">接收数据流失败，错误代码：105</string>
+    <string name="delete_cn">删除</string>
+    <string name="delete_en">Delete</string>
+    <string name="depth">深度</string>
+    <string name="device_autosearchfailed">没有匹配到合适的设备</string>
+    <string name="device_connecting">正在连接设备</string>
+    <string name="deviceisclosed">设备已断开</string>
+    <string name="dilog_cancel">取消</string>
+    <string name="dilog_device_reconect">设备已断开连接，将设备放在有效距离内，重新连接来获取数据</string>
+    <string name="dilog_digtool_empty">digtool中没有文件</string>
+    <string name="dilog_download">获取数据</string>
+    <string name="dilog_download_giveup">是否退出下载数据？</string>
+    <string name="dilog_empty">还没有测量数据</string>
+    <string name="dilog_exit">是否退出程序？</string>
+    <string name="dilog_export_fail">导出失败</string>
+    <string name="dilog_export_success">导出成功，导出至sd卡digtoolxls</string>
+    <string name="dilog_initmark_noDelyTimer">延迟启动不能为空</string>
+    <string name="dilog_initmark_noDepth">初始深度不能为空</string>
+    <string name="dilog_initmark_noProjectName">项目名称不能为空</string>
+    <string name="dilog_isdownload">是否需要获取上一次数据？</string>
+    <string name="dilog_layout_color">#000</string>
+    <string name="dilog_mark_already">记录点已被记录</string>
+    <string name="dilog_mark_back">返回</string>
+    <string name="dilog_mark_empty">数据列表为空</string>
+    <string name="dilog_mark_end">结束测试</string>
+    <string name="dilog_mark_exit">是否结束测试？</string>
+    <string name="dilog_mark_giveup">是否放弃本次测试数据？</string>
+    <string name="dilog_mark_nomark">还没有记录点</string>
+    <string name="dilog_mark_not_download">下次连接设备后可再次获取</string>
+    <string name="dilog_mark_not_download_faild">连接故障，下次连接设备后可再次获取</string>
+    <string name="dilog_mark_now">正在获取数据，请不要关闭设备</string>
+    <string name="dilog_markend_not_ok">mark记录还没有结束，请稍后再试</string>
+    <string name="dilog_newmark">开始新的测量</string>
+    <string name="dilog_nextdownload">下次再获取</string>
+    <string name="dilog_no">否</string>
+    <string name="dilog_nowreconnecting">设备正在重连</string>
+    <string name="dilog_ok">确定</string>
+    <string name="dilog_searchtype">请选择搜索模式</string>
+    <string name="dilog_searchtype_auto">智能匹配</string>
+    <string name="dilog_searchtype_manual">手动匹配</string>
+    <string name="dilog_start_bulebooth">请稍后，正在初始化蓝牙设备</string>
+    <string name="dilog_text_color">#fff</string>
+    <string name="dilog_txt_del">确定要删除此文件?</string>
+    <string name="dilog_txt_empty">文件不存在</string>
+    <string name="dilog_watting">等待设备接受指令</string>
+    <string name="dilog_yes">是</string>
+    <string name="dip">顶角：</string>
+    <string name="download">下载数据</string>
+    <string name="dz">深度Z</string>
+    <string name="export_cn">导出</string>
+    <string name="export_en">Export</string>
+    <string name="initmark_delaytime">延迟启动：</string>
+    <string name="initmark_depth">初始深度：</string>
+    <string name="initmark_device">连接设备：</string>
+    <string name="initmark_interval">时间间隔：</string>
+    <string name="initmark_menu_title">初始化</string>
+    <string name="initmark_proname">项目名称：</string>
+    <string name="initstart_cn">开始测量</string>
+    <string name="initstart_en">Start</string>
+    <string name="left_view_cn">左视图</string>
+    <string name="left_view_en">Left</string>
+    <string name="logs">日志</string>
+    <string name="logs_nobuletooth">无法打开手机蓝牙，请确认手机是否有蓝牙功能！</string>
+    <string name="logs_nodevice">设备还未准备好！</string>
+    <string name="lx">偏移Lx</string>
+    <string name="ly">偏移Ly</string>
+    <string name="magneticdip">磁顶角</string>
+    <string name="magneticvector">磁矢量和</string>
+    <string name="main_menu_title">主菜单</string>
+    <string name="map_cn">3D图</string>
+    <string name="map_en">Plot</string>
+    <string name="map_menu_title">3D图</string>
+    <string name="mark_down">向下</string>
+    <string name="mark_end">结束</string>
+    <string name="mark_retest">复测</string>
+    <string name="mark_up">向上</string>
+    <string name="meter">　米</string>
+    <string name="minute">分钟</string>
+    <string name="noconnted">设备还未连接，请先连接设备</string>
+    <string name="none_found">没有找到设备</string>
+    <string name="none_paired">没有配对的设备</string>
+    <string name="normal">正常</string>
+    <string name="not_connected">you are not connected to a device</string>
+    <string name="online_cn">在线调试</string>
+    <string name="online_en">Online</string>
+    <string name="online_menu_title">在线测试</string>
+    <string name="open">开</string>
+    <string name="orientation">方位：</string>
+    <string name="pl">偏移L</string>
+    <string name="refactoryd_cn">恢复出厂设置</string>
+    <string name="refactoryd_en">Factory Reset</string>
+    <string name="scanning">正在搜索设备。。。。</string>
+    <string name="searchnow">请稍后...</string>
+    <string name="second">　秒</string>
+    <string name="select_device">请选择一个设备</string>
+    <string name="send">send</string>
+    <string name="serialno">序号</string>
+    <string name="setting_menu_title">属性</string>
+    <string name="settingcn">属性</string>
+    <string name="settingen">Utility</string>
+    <string name="settingmenu">参数设定</string>
+    <string name="socket_error">socket关闭失败，错误代码：104</string>
+    <string name="socketfailed">连接失败，原因：socket建立失败，错误代码：101</string>
+    <string name="switch01">switch</string>
+    <string name="systemistrye">秒后重连</string>
+    <string name="systemistrys">系统将会在</string>
+    <string name="threshold_range">门限范围</string>
+    <string name="thresholdsetting">门限设定：</string>
+    <string name="time">时间</string>
+    <string name="title_connected_to"/>
+    <string name="title_connecting">正在连接。。。</string>
+    <string name="title_not_connected">未连接</string>
+    <string name="title_other_devices">可用的设备</string>
+    <string name="title_paired_devices">已配对的设备</string>
+    <string name="top_view_cn">顶视图</string>
+    <string name="top_view_en">Top</string>
+    <string name="tryconnecting">正在尝试上一次连接</string>
+    <string name="typical_value">典型值</string>
+    <string name="unconnected">未连接</string>
+    <string name="vectorgravimetry">重力矢量和</string>
+    <string name="vertical_view_cn">主视图</string>
+    <string name="vertical_view_en">Front</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+
+  	 <item name="android:button">@drawable/checkbox_selector</item>
+
+  	 <item name="android:paddingLeft">25.0dip</item>
+
+  	 <item name="android:maxHeight">10.0dip</item>
+
+  	</style>
+</resources>

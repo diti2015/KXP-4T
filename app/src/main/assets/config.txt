@@ -1,0 +1,8 @@
+@门限设定#threshold,磁矢量和典型值#mvd,磁矢量和门限范围#mvv,重力矢量和典型值#gvd,重力矢量和门限范围#gvv,磁倾角典型值#mdd,磁倾角门限范围#mdv@
+threshold=0;
+mvd=0;
+mvv=0;
+gvd=0;
+gvv=0;
+mdd=0;
+mdv=0;

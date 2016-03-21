@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+<RelativeLayout
+        android:id="@+id/mainTitleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="@drawable/nav_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/celiang_menu_title"
+            android:textSize="25sp"
+            android:textColor="#000" 
+            />
+<!-- 
+        <ImageView
+            android:id="@+id/deviceLamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/lamp_red" />
+         -->
+        <ImageView
+            android:id="@+id/logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/logos" />
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/markdepth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignRight="@+id/mark"
+        android:layout_toRightOf="@+id/textView3"
+        android:text="123"
+        android:gravity="center"
+        android:layout_marginLeft="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    
+
+    <Switch
+        android:id="@+id/markdirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignRight="@+id/markdepth"
+        android:checked="true"
+        android:textOn="@string/mark_down"
+        android:textOff="@string/mark_up" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mark"
+        android:layout_below="@+id/mark"
+        android:layout_marginTop="22dp"
+        android:text="待测深度："
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+		<ListView
+		    android:id="@+id/marklist"
+		    android:layout_width="match_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_above="@+id/linearLayout1"
+		    android:layout_alignLeft="@+id/textView5"
+		    android:layout_alignRight="@+id/markdirection"
+		    android:layout_below="@+id/markdirection"
+		    android:layout_marginTop="10dp"
+		    android:layout_marginBottom="10dp"
+		    android:dividerHeight="2dp"
+		    android:headerDividersEnabled="false"
+		    android:textSize="20sp"
+		    android:transcriptMode="alwaysScroll" >
+	
+	    </ListView>
+    
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="测量方向："
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="12dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/markdepth"
+        android:text="间隔深度："
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/intervalDepth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/markdepth"
+        android:layout_alignRight="@+id/markdepth"
+        android:layout_below="@+id/markdepth"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="6" >
+
+        <requestFocus />
+    </EditText>
+<!-- 
+    <Button
+        android:id="@+id/markend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/markCountDown"
+        android:text="结束"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/markretest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/markCountDown"
+        android:text="复测"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp" />
+ -->
+   
+<!-- 
+    <Button
+        android:id="@+id/mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTitleLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:height="100dp"
+        android:width="250dp" />
+     -->
+    <RelativeLayout
+         android:id="@+id/mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTitleLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:height="100dp"
+        android:width="250dp"
+        android:background="@drawable/blue_mark_button" >
+        
+	 <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="测量"
+        android:textColor="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	 
+	 <TextView
+        android:id="@+id/markCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:text="3"
+        android:textColor="#000"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	 
+    </RelativeLayout>
+    
+	<LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#CEDCD4" >
+
+        <LinearLayout
+            android:id="@+id/markretest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/lgreen_button"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/chayueCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mark_retest"
+                android:textColor="#000"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/markend"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/yellow_button"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/celiangCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mark_end"
+                android:textColor="#000"
+                android:textSize="25sp" />
+            
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

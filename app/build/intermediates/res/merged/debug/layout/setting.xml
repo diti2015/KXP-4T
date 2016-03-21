@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/settingTitleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/nav_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="@string/setting_menu_title"
+            android:textSize="25sp"
+            android:textColor="#000" 
+            />
+
+        <ImageView
+            android:id="@+id/logs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/logos" />
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:text=""/>
+    
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/settingTitleLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/thresholdsetting"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:id="@+id/settingLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/threshold"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="50dp" >
+
+        <LinearLayout
+            android:id="@+id/layout01"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" >
+
+            <TextView
+                android:id="@+id/markdepth"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/initDeviceName"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="@string/typical_value" />
+
+            <TextView
+                android:id="@+id/onlineDip"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="@string/threshold_range" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout02"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/vectorGravimetry"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/vectorgravimetry"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/GVD"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/GVV"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout03"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:id="@+id/magneticVector"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/magneticvector"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/MVD"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/MVV"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout04"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" >
+			
+            <TextView
+                android:id="@+id/magneticDip"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="@string/magneticdip"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+            
+            <EditText
+                android:id="@+id/MDD"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/MDV"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:ems="10"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="number" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+  <LinearLayout
+            android:id="@+id/onlineTest"
+            android:layout_width="fill_parent"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:background="@drawable/red_button"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/initStartCN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/online_cn"
+                android:textColor="#fff"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/initStartEN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/online_en"
+                android:textColor="#fff"
+                android:textSize="30sp" />
+            
+        </LinearLayout>
+
+</RelativeLayout>
