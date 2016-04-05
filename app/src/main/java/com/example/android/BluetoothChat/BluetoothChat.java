@@ -177,7 +177,7 @@ public class BluetoothChat extends Activity {
         	byte[] bos = message.getBytes();
         	byte[] bos_new = new byte[bos.length+2];
         	int n=0;
-        	for(int i=0;i<bos.length;i++){ //ÊÖ»úÖÐ»»ÐÐÎª0a,½«Æä¸ÄÎª0d 0aºóÔÙ·¢ËÍ
+        	for(int i=0;i<bos.length;i++){ //æ‰‹æœºä¸­æ¢è¡Œä¸º0a,å°†å…¶æ”¹ä¸º0d 0aåŽå†å‘é€
         		bos_new[n]=bos[i];
     			n++;
     		}
@@ -185,7 +185,7 @@ public class BluetoothChat extends Activity {
 			n++;
 			bos_new[n]=0x0a;
 			
-            //·¢ËÍµ½mainµÄÏß³Ì
+            //å‘é€åˆ°mainçš„çº¿ç¨‹
     		OutputStream os;
 			
 			try {
@@ -273,7 +273,7 @@ public class BluetoothChat extends Activity {
         @Override  
         public void onReceive(Context context, Intent intent) {  
         	String content=intent.getStringExtra("readMessage");  
-            //CharSequence string="ÊÕµ½ÐÅÏ¢:"+content;
+            //CharSequence string="æ”¶åˆ°ä¿¡æ¯:"+content;
             //Toast.makeText(context, string, Toast.LENGTH_LONG).show();
         	
         }  

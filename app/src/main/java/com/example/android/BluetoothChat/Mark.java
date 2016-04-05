@@ -65,13 +65,13 @@ public class Mark extends Activity {
 	private static int recordTime = 0;
 	private static int showCount;
 	private static int intervalDepthCount;
-	private static boolean isUpDown = true;//true�ϣ�false��
+	private static boolean isUpDown = true;//true???false??
 	private static boolean initTime = true;
-//	public static String MarkId ="���#";
-//	public static String MarkTime ="��¼ʱ��#";
-//	public static String MarkDepth ="���#";
-//	public static String MarkOrientation ="��λ#";
-//	public static String MarkDip ="���#";
+//	public static String MarkId ="???#";
+//	public static String MarkTime ="??????#";
+//	public static String MarkDepth ="???#";
+//	public static String MarkOrientation ="??λ#";
+//	public static String MarkDip ="???#";
 //	private static String lastDepthValue = "0";
 	public static String MarkId ="序号#";
 	public static String MarkTime ="记录时间#";
@@ -81,7 +81,7 @@ public class Mark extends Activity {
 	private static String lastDepthValue = "0";
 	private static int MarkLen = 0;
 	private static int NPInterval = 0;
-	private int NPDTime = 0;//����ת����
+	private int NPDTime = 0;//?????????
 	private static boolean  reallyMark = true;
 	private static boolean isReset = false;
 	//private ScrollView sv;
@@ -110,9 +110,9 @@ public class Mark extends Activity {
 		setContentView(R.layout.mark);
 		
 		NPInterval = Integer.parseInt(commond.NPInterval);
-		NPDTime = Integer.parseInt(commond.NPDTime)*60;//����ת����
+		NPDTime = Integer.parseInt(commond.NPDTime)*60;//?????????
 		
-		//д�뿪ʼ����ָ��
+		//д??????????
 		//commond.writeOs(commond.celiang(commond.NPDTime, commond.NPInterval));
 		//commond.writeOsNext();
 		
@@ -124,7 +124,7 @@ public class Mark extends Activity {
 		mark = (RelativeLayout) findViewById(R.id.mark);
 		marklist = (ListView) findViewById(R.id.marklist);
 		intervalDepth = (EditText) findViewById(R.id.intervalDepth);
-		//sv = (ScrollView)findViewById(R.id.ScrollView01);  //�õ���ҳ���
+		//sv = (ScrollView)findViewById(R.id.ScrollView01);  //?????????
 		intervalDepth.addTextChangedListener(watcher);
 		
 		markCountDown.setText(""+NPDTime);
@@ -154,7 +154,7 @@ public class Mark extends Activity {
 				
 				if(initTime){
 					commond.setToast(markActivity.getString(R.string.logs_nodevice));
-					//Toast.makeText(markActivity, "�豸��δ׼����", Toast.LENGTH_LONG).show();
+					//Toast.makeText(markActivity, "?豸??δ?????", Toast.LENGTH_LONG).show();
 					return;
 				}
 				
@@ -173,7 +173,7 @@ public class Mark extends Activity {
 					}
 
 					//commond.setToast(markActivity.getString(R.string.dilog_mark_already));
-						//Toast.makeText(markActivity, "��¼���ѱ���¼", Toast.LENGTH_LONG).show();
+						//Toast.makeText(markActivity, "???????????", Toast.LENGTH_LONG).show();
 				}
 				else {
 					isThisPortMark = true;
@@ -205,11 +205,11 @@ public class Mark extends Activity {
 				marklist.setAdapter(adapter1);
 				*/
 				if(isReset){
-					//Toast.makeText(getBaseContext(), "���ʱ����ѱ�����", Toast.LENGTH_LONG).show();
+					//Toast.makeText(getBaseContext(), "??????????????", Toast.LENGTH_LONG).show();
 				}
 				else {
 					if(isThisPortMark){
-						//Toast.makeText(getBaseContext(), "���ʱ����ѱ�����", Toast.LENGTH_LONG).show();
+						//Toast.makeText(getBaseContext(), "??????????????", Toast.LENGTH_LONG).show();
 					}
 					else {
 						setTime(false);
@@ -244,23 +244,23 @@ public class Mark extends Activity {
 									
 									//MarkTime
 									String[] tt = MarkTime.split("#");
-									MarkLen = tt.length - 1;//����һ������
+									MarkLen = tt.length - 1;//???????????
 									
 									if(MarkLen<1){
 										commond.setToast(getApplication().getString(R.string.dilog_mark_empty));
-										//Toast.makeText(getBaseContext(), "�����б�Ϊ��", Toast.LENGTH_LONG).show();
+										//Toast.makeText(getBaseContext(), "?????б????", Toast.LENGTH_LONG).show();
 										onDestroy();
 										return;
 									}
 									
-									commond.writeTask();//д��task��־
+									commond.writeTask();//д??task???
 									
 									
 									commond.setToast(getApplication().getString(R.string.dilog_mark_not_download));
-									//Toast.makeText(getBaseContext(), "���ڻ�ȡ���ݣ��벻Ҫ�ر��豸", Toast.LENGTH_LONG).show();
+									//Toast.makeText(getBaseContext(), "??????????????????豸", Toast.LENGTH_LONG).show();
 									for(int a = 1;a<tt.length;a++){
 										int c =  Integer.parseInt(tt[a].toString())/NPInterval;
-										if(commond.D)Log.e(TAG, "��ѯ��"+commond.caxun(c));
+										if(commond.D)Log.e(TAG, "?????"+commond.caxun(c));
 										commond.writeOs(commond.caxun(c));
 									}
 									
@@ -305,7 +305,7 @@ public class Mark extends Activity {
 			mark.setBackgroundDrawable(btnDrawable);
 		}
 		
-		//�򿪼�ʱ��
+		//??????
 		handler.post(runnable);
 	}
 	
@@ -410,15 +410,15 @@ public class Mark extends Activity {
 	private static void setTime(boolean isAdd){
 		//Log.e(TAG,"reallyMark:"+reallyMark);
 		//Log.e(TAG,"isAdd:"+isAdd);
-		//�жϼ�¼���Ƿ������¼
+		//?ж??????????????
 		if(!reallyMark&&isAdd){
 			commond.setToast(markActivity.getString(R.string.dilog_mark_already));
-			//Toast.makeText(markActivity, "��¼���ѱ���¼", Toast.LENGTH_LONG).show();
+			//Toast.makeText(markActivity, "???????????", Toast.LENGTH_LONG).show();
 			return;
 		}
 		if(initTime){
 			commond.setToast(markActivity.getString(R.string.logs_nodevice));
-			//Toast.makeText(markActivity, "�豸��δ׼����", Toast.LENGTH_LONG).show();
+			//Toast.makeText(markActivity, "?豸??δ?????", Toast.LENGTH_LONG).show();
 			return;
 		}
 		
@@ -451,7 +451,7 @@ public class Mark extends Activity {
 			}
 			else {
 				commond.setToast(markActivity.getString(R.string.dilog_mark_nomark));
-				//Toast.makeText(markActivity, "��û�м�¼��", Toast.LENGTH_LONG).show();
+				//Toast.makeText(markActivity, "????м????", Toast.LENGTH_LONG).show();
 				return;
 			}
 		}
@@ -496,7 +496,7 @@ public class Mark extends Activity {
 			//reallyMark=false;
 			isReset = false;
 			markdepth.setText(""+setDepth());
-			//marklist.scrollTo(0,marklist.getMeasuredHeight()); //�����������һҳ
+			//marklist.scrollTo(0,marklist.getMeasuredHeight()); //?????????????
 		}
 		else {
 			recordCount--;
@@ -506,7 +506,7 @@ public class Mark extends Activity {
 	}
 	
 	public static void initStatic(){
-		commond.instruction.clear();//�������
+		commond.instruction.clear();//???????
 		markActivity = null;
 		nextCount = 0;
 		setCount = 0;
@@ -514,7 +514,7 @@ public class Mark extends Activity {
 		recordTime = 0;
 		showCount = 0;
 		intervalDepthCount = 0;
-		isUpDown = true;//true�ϣ�false��
+		isUpDown = true;//true???false??
 		initTime = true;
 		MarkId ="序号#";
 		MarkTime ="记录时间#";
@@ -579,7 +579,7 @@ public class Mark extends Activity {
 	    @Override
 	    public void run() {
 	        // TODO Auto-generated method stub
-	        //���õ���ʱ
+	        //????????
 	        showCount = nextCount-1;
 	        if(showCount==0||showCount<0){
 	        	if(initTime){
@@ -595,13 +595,13 @@ public class Mark extends Activity {
 	        			isThisPortMark = false;
 	        		}
 	        		
-		        	//�������
+		        	//???????
 		        	//markdepth.setText(""+setDepth());
 	        		loopCount++;
 	        	}
 	        	testTimer = 0;
 	        	showCount = NPInterval;
-	        	//������һ��mark
+	        	//?????????mark
 	        	reallyMark = true;
 	        	
 	        	Resources resources = markActivity.getResources();   
@@ -615,9 +615,9 @@ public class Mark extends Activity {
 	        markCountDown.setText(""+showCount);
 	        //Log.e(TAG, ""+showCount);
 	        //Log.e(TAG, ""+setCount);
-	        //�������
+	        //???????
 	        
-	        /*//ÿ����
+	        /*//?????
 	        if(!initTime){
 		        intervalDepthCount = Integer.parseInt(intervalDepth.getText().toString());
 		        int getDepth = Integer.parseInt(markdepth.getText().toString());
@@ -631,7 +631,7 @@ public class Mark extends Activity {
 	        }
 	        */
 	        testTimer++;
-	        //Log.e(TAG, ""+testTimer+"��ʾʱ�䣺"+showCount);
+	        //Log.e(TAG, ""+testTimer+"??????"+showCount);
 	        handler.postDelayed(this, 1000);
 	    }
 	};
@@ -643,7 +643,7 @@ public class Mark extends Activity {
 	
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //���/����/���η��ؼ� 
+	    if(keyCode == KeyEvent.KEYCODE_BACK) { //???/????/???η???? 
 	    	new AlertDialog.Builder(this)
 			.setMessage(getApplication().getString(R.string.dilog_mark_giveup))
 			.setNegativeButton(getApplication().getString(R.string.dilog_mark_back),
@@ -673,12 +673,12 @@ public class Mark extends Activity {
         	String[] info = commond.returnInfo(content);
         	/*
         	if(info[0].equals("CLOK")){
-        		Log.e(TAG, "��ʱ������");
+        		Log.e(TAG, "?????????");
         		handler.post(runnable);
         	}
         	*/
         	if(info[0].equals("HHZ")){
-        		commond.retryNum = 0;//�����ظ�����
+        		commond.retryNum = 0;//???????????
         		commond.stopKeepService();
         		commond.reallyTimer = false;
         		
@@ -694,14 +694,14 @@ public class Mark extends Activity {
         		int MarkOrientationLen = MarkOrientation.split("#").length;
         		int MarkIdLen = MarkId.split("#").length;
         		
-        		if(commond.D)Log.e(TAG, "MarkOrientationLen:"+MarkOrientationLen+"|MarkIdLen:"+MarkIdLen+"|lastCount��Ҫ��1:"+commond.lastCount);
+        		if(commond.D)Log.e(TAG, "MarkOrientationLen:"+MarkOrientationLen+"|MarkIdLen:"+MarkIdLen+"|lastCount?????1:"+commond.lastCount);
         		if(MarkOrientationLen==MarkIdLen||MarkOrientationLen==commond.lastCount+1&&commond.lastCount!=0){
         			Progress.setProgressBar(100);
         			String[] MarkTimeArray = MarkTime.split("#");
         			String[] MarkDepthArray = MarkDepth.split("#");
         			String[] MarkOrientationArray = MarkOrientation.split("#");
         			String[] MarkDipArray = MarkDip.split("#");
-        			//д���ļ�,д���ļ�,д���ļ�
+        			//д?????,д?????,д?????
         			String res ="";
         			//if(D)Log.e(TAG,"lastCount:"+commond.lastCount);
         			if(MarkIdLen==1) MarkIdLen = commond.lastCount+1;
@@ -726,7 +726,7 @@ public class Mark extends Activity {
         			commond.doTask("del", "");
         			commond.lastCount = 0;
         			
-        			//�¸�����
+        			//???????
         			
         			new Timer().schedule(new TimerTask() {
     					@Override
@@ -754,7 +754,7 @@ public class Mark extends Activity {
         			if(commond.D)Log.e(TAG, "3:"+progressStats);
         			//logs.setLogs("progressStats"+progressStats);
         			int progressStatsVal = Integer.valueOf((int) Math.round( progressStats));
-        			if(commond.D)Log.e(TAG, "������:"+progressStatsVal);
+        			if(commond.D)Log.e(TAG, "??????:"+progressStatsVal);
         			//logs.setLogs("progressStatsVal"+progressStatsVal);
         			if(progressStatsVal==-1){
         				initStatic();

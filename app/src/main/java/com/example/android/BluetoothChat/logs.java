@@ -54,8 +54,8 @@ public class logs extends Activity
 	private final static String TAG = "logs";
 	private final static boolean D = true;
 	public static logs logActivity;
-	private static TextView dis;       //½ÓÊÕÊı¾İÏÔÊ¾¾ä±ú
-    private static ScrollView sv;      //·­Ò³¾ä±ú
+	private static TextView dis;       //æ¥æ”¶æ•°æ®æ˜¾ç¤ºå¥æŸ„
+    private static ScrollView sv;      //ç¿»é¡µå¥æŸ„
 
     public static String log = "";
     public static boolean isLogActive = false;
@@ -74,8 +74,8 @@ public class logs extends Activity
 		
 		setContentView(R.layout.logs);
 		
-		sv = (ScrollView)findViewById(R.id.logScrollView);  //µÃµ½·­Ò³¾ä±ú
-        dis = (TextView) findViewById(R.id.login);      //µÃµ½Êı¾İÏÔÊ¾¾ä±ú
+		sv = (ScrollView)findViewById(R.id.logScrollView);  //å¾—åˆ°ç¿»é¡µå¥æŸ„
+        dis = (TextView) findViewById(R.id.login);      //å¾—åˆ°æ•°æ®æ˜¾ç¤ºå¥æŸ„
         
         isLogActive = true;
 		setLogs("");
@@ -85,14 +85,14 @@ public class logs extends Activity
 		if(!logcache.equals("")){
 			SimpleDateFormat   sDateFormat   =   new   SimpleDateFormat("hh:mm:ss");     
 		    String   date   =   sDateFormat.format(new   java.util.Date());  
-		    logcache = date + "¡¡¡¡" + logcache + "\n";
+		    logcache = date + "ã€€ã€€" + logcache + "\n";
 		    //if(D)Log.e(TAG, logcache);
 			log += logcache;
 		}
 		
 		if(isLogActive){
-			dis.setText(log);   //ÏÔÊ¾Êı¾İ 
-			sv.scrollTo(0,dis.getMeasuredHeight()); //ÌøÖÁÊı¾İ×îºóÒ»Ò³
+			dis.setText(log);   //æ˜¾ç¤ºæ•°æ® 
+			sv.scrollTo(0,dis.getMeasuredHeight()); //è·³è‡³æ•°æ®æœ€åä¸€é¡µ
 		}
 		
 	}
@@ -115,7 +115,7 @@ public class logs extends Activity
 	/*
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //¼à¿Ø/À¹½Ø/ÆÁ±Î·µ»Ø¼ü 
+	    if(keyCode == KeyEvent.KEYCODE_BACK) { //ç›‘æ§/æ‹¦æˆª/å±è”½è¿”å›é”® 
 	        return true; 
 	    }
 	    return super.onKeyDown(keyCode, event); 

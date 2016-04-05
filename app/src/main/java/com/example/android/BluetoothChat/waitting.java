@@ -72,13 +72,13 @@ public class waitting extends Activity
 //		    @Override
 //		    public void run() {
 //		        // TODO Auto-generated method stub
-//		    	//×Ô¶¯ËÑË÷Éè±¸
+//		    	//è‡ªåŠ¨æœç´¢è®¾å¤‡
 //		    	wattingActivity.finish();
 //				commond.isLastTask = true;
 //				main.startDeviceListActivityAuto();
 //		    }
 //		};
-//		handler.postDelayed(runnable, 5000);//Ã¿Á½ÃëÖ´ĞĞÒ»´Îrunnable.
+//		handler.postDelayed(runnable, 5000);//æ¯ä¸¤ç§’æ‰§è¡Œä¸€æ¬¡runnable.
 	}
 	
 	public void setTitle(String title){
@@ -102,7 +102,7 @@ public class waitting extends Activity
 	
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //¼à¿Ø/À¹½Ø/ÆÁ±Î·µ»Ø¼ü 
+	    if(keyCode == KeyEvent.KEYCODE_BACK) { //ç›‘æ§/æ‹¦æˆª/å±è”½è¿”å›é”® 
 	        return true; 
 	    }
 	    return super.onKeyDown(keyCode, event); 

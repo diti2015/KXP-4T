@@ -98,7 +98,7 @@ public class Progress extends Activity
 	
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //¼à¿Ø/À¹½Ø/ÆÁ±Î·µ»Ø¼ü 
+	    if(keyCode == KeyEvent.KEYCODE_BACK) { //ç›‘æ§/æ‹¦æˆª/å±è”½è¿”å›é”® 
 	    	new AlertDialog.Builder(this)
 			.setMessage(getApplication().getString(R.string.dilog_download_giveup))
 			.setNegativeButton(getApplication().getString(R.string.dilog_cancel),
@@ -116,7 +116,7 @@ public class Progress extends Activity
 							commond.stopKeepService();
 							Progress.progressActivity.onDestroy();
     						if(Mark.markActivity!=null)Mark.markActivity.onDestroy();
-    						Mark.initStatic();//±ØĞë·ÅÔÚÕâÀï
+    						Mark.initStatic();//å¿…é¡»æ”¾åœ¨è¿™é‡Œ
 						}
 					}).show();
 	        return true; 

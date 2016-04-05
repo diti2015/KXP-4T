@@ -65,12 +65,12 @@ public class RWfile {
 	       }   
 	}   
 	
-	//¶Áassets
+	//è¯»assets
 	public static String read(String fileName,Context context){
-		//String fileName = "config.txt"; //ÎÄ¼şÃû×Ö 
+		//String fileName = "config.txt"; //æ–‡ä»¶åå­— 
 		String res=""; 
 		try{ 
-		   //µÃµ½×ÊÔ´ÖĞµÄassetÊı¾İÁ÷
+		   //å¾—åˆ°èµ„æºä¸­çš„assetæ•°æ®æµ
 		   InputStream in = context.getResources().getAssets().open(fileName); 
 		   int length = in.available();         
 		   byte [] buffer = new byte[length];        

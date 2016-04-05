@@ -157,11 +157,11 @@ public class Online extends Activity {
         		TimerOutS.cancel();
         	}
         	*/
-            //CharSequence string="ÊÕµ½ĞÅÏ¢:"+content;
+            //CharSequence string="æ”¶åˆ°ä¿¡æ¯:"+content;
         	String[] info = commond.returnInfo(content);
         	Log.e(TAG, ""+info);
         	if(info[0].equals("HPR")&&isCreatOnline){
-        		commond.retryNum = 0;//ÖØÖÃÖØ¸´´ÎÊı
+        		commond.retryNum = 0;//é‡ç½®é‡å¤æ¬¡æ•°
         		//Log.e(TAG, "22222222222222222222222222222222222222222222222");
         		//clearWriteOsNext.cancel();
         		//clearWriteOsNext = new Timer();
@@ -173,8 +173,8 @@ public class Online extends Activity {
         		float dipValue = Float.parseFloat(info[1]) / 100;
         		float OreValue = Float.parseFloat(info[3]) / 10;
         		
-	        //	onlineDip.setText(""+dipValue+"¡ã");
-	        //	onlineOrientation.setText(""+OreValue+"¡ã");
+	        //	onlineDip.setText(""+dipValue+"Â°");
+	        //	onlineOrientation.setText(""+OreValue+"Â°");
 				onlineDip.setText( ""+dipValue+"\u00b0");
 				onlineOrientation.setText(""+OreValue+"\u00b0");
 	        	//handler.removeCallbacks(runnable);
@@ -186,7 +186,7 @@ public class Online extends Activity {
 						// TODO Auto-generated method stub
 			        	commond.writeOsNext();
 					}
-				}, 2000);//Éè±¸ÔÚÏßÊ±ºò£¬Ö´ĞĞ¼ä¸ô
+				}, 2000);//è®¾å¤‡åœ¨çº¿æ—¶å€™ï¼Œæ‰§è¡Œé—´éš”
 	        	
 	        	commond.startKeepService();
 	        	
@@ -196,7 +196,7 @@ public class Online extends Activity {
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						Log.e(TAG,"³¬Ê±Ö´ĞĞ£¡³¬Ê±Ö´ĞĞ£¡");
+						Log.e(TAG,"è¶…æ—¶æ‰§è¡Œï¼è¶…æ—¶æ‰§è¡Œï¼");
 			        	commond.writeOsNext();
 			        	
 					}
@@ -215,7 +215,7 @@ public class Online extends Activity {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			//Òª×öµÄÊÂÇé
+			//è¦åšçš„äº‹æƒ…
 			if(commond.D)Log.e(TAG,"1234565");
 			commond.writeOsNext();
 		}

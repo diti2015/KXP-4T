@@ -606,7 +606,7 @@ public class main extends Activity
 	  @Override 
     	public void run(){
     		int num = 0;
-    		String a = String.valueOf((int)(Math.random() * 10+1)) ;
+    		//String a = String.valueOf((int)(Math.random() * 10+1)) ;
     		byte[] buffer = new byte[1024];
     		byte[] buffer_new = new byte[1024];
     		int i = 0;
@@ -615,7 +615,7 @@ public class main extends Activity
     		//Log.e(TAG, "1111111111111111111111111111111");
     		//接收线程
     		while(true){
-    			if(true){
+    			//if(true){
     			try{
     				if(!commond.isConntected)return;
     				while(is.available()==0){
@@ -652,11 +652,14 @@ public class main extends Activity
     					if(InitMark.start){
     						smsg+=s;   //写入接收缓存
     					}
+
+						handler.sendMessage(handler.obtainMessage());
+
     					if(is.available()==0){
     						break;
     					}
     					//发送显示消息，进行显示刷新
-    					handler.sendMessage(handler.obtainMessage());  
+    					//handler.sendMessage(handler.obtainMessage());
     				}
     				    	    		
     	    		}catch(IOException e){
@@ -671,7 +674,7 @@ public class main extends Activity
     			//Looper.loop();
     		}
 
-    	}
+    	//}
     };
     return ReadThread;
     }

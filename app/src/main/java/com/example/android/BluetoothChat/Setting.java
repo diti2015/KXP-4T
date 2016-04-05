@@ -109,10 +109,10 @@ public class Setting extends Activity {
 			public void onClick(View v) {
 				if(main._socket==null||!commond.isConntected){
 					commond.setToast(getApplication().getString(R.string.noconnted));
-					//Toast.makeText(getApplicationContext(), "Éè±¸»¹Î´Á¬½Ó£¬ÇëÏÈÁ¬½ÓÉè±¸£¡", Toast.LENGTH_SHORT).show();
+					//Toast.makeText(getApplicationContext(), "è®¾å¤‡è¿˜æœªè¿æ¥ï¼Œè¯·å…ˆè¿æ¥è®¾å¤‡ï¼", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				InitMark.start = true;//¿ªÊ¼Ğ´Êı¾İµ¹ÄÚ´æ
+				InitMark.start = true;//å¼€å§‹å†™æ•°æ®å€’å†…å­˜
 				Intent intent = new Intent(Setting.this,Online.class) ;
 				//Intent intent = new Intent(Setting.this,BluetoothChat.class) ;
 				startActivity(intent);

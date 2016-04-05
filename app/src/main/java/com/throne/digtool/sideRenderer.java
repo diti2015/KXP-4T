@@ -31,8 +31,8 @@ private float[] ypoint={-13,28,0,
 
 		
 	int[] rectColor = new int[] {
-	        0, 0, 65535, 0, // ÓÒÏÂ¶¥µãÀ¶É«
-		0, 65535, 0, 0, // ÓÒÉÏ¶¥µãÂÌÉ«
+	        0, 0, 65535, 0, // å³ä¸‹é¡¶ç‚¹è“è‰²
+		0, 65535, 0, 0, // å³ä¸Šé¡¶ç‚¹ç»¿è‰²
 
 	
 	};
@@ -53,18 +53,18 @@ private float[] ypoint={-13,28,0,
 	IntBuffer rectColorBuffer;
 	FloatBuffer lineDataBuffer;
 	FloatBuffer pentacleBuffer;
-	// ¿ØÖÆĞı×ªµÄ½Ç¶È
+	// æ§åˆ¶æ—‹è½¬çš„è§’åº¦
 	private float rotate;
 	private XYZVo xyz;
 
 	private int length;
 	public sideRenderer()
 	{
-		// ½«¶¥µãÎ»ÖÃÊı¾İÊı×é°ü×°³ÉFloatBuffer;
+		// å°†é¡¶ç‚¹ä½ç½®æ•°æ®æ•°ç»„åŒ…è£…æˆFloatBuffer;
 		
 		rectDataBuffer = FloatBuffer.wrap(rectData);
 		lineDataBuffer = FloatBuffer.wrap(LineData);
-		// ½«¶¥µãÑÕÉ«Êı¾İÊı×é°ü×°³ÉIntBuffer;
+		// å°†é¡¶ç‚¹é¢œè‰²æ•°æ®æ•°ç»„åŒ…è£…æˆIntBuffer;
 
 		rectColorBuffer = IntBuffer.wrap(rectColor);
 	}
@@ -89,67 +89,67 @@ private float[] ypoint={-13,28,0,
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config)
 	{
-		// ¹Ø±Õ¿¹¶¶¶¯
+		// å…³é—­æŠ—æŠ–åŠ¨
 		gl.glDisable(GL10.GL_DITHER);
-		// ÉèÖÃÏµÍ³¶ÔÍ¸ÊÓ½øĞĞĞŞÕı
+		// è®¾ç½®ç³»ç»Ÿå¯¹é€è§†è¿›è¡Œä¿®æ­£
 		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST);
 		gl.glClearColor(0, 0, 0, 0);
-		// ÉèÖÃÒõÓ°Æ½»¬Ä£Ê½
+		// è®¾ç½®é˜´å½±å¹³æ»‘æ¨¡å¼
 		gl.glShadeModel(GL10.GL_SMOOTH);
-		// ÆôÓÃÉî¶È²âÊÔ
+		// å¯ç”¨æ·±åº¦æµ‹è¯•
 		gl.glEnable(GL10.GL_DEPTH_TEST);
-		// ÉèÖÃÉî¶È²âÊÔµÄÀàĞÍ
+		// è®¾ç½®æ·±åº¦æµ‹è¯•çš„ç±»å‹
 		gl.glDepthFunc(GL10.GL_LEQUAL);
 	}
 
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height)
 	{
-		// ÉèÖÃ3DÊÓ´°µÄ´óĞ¡¼°Î»ÖÃ
+		// è®¾ç½®3Dè§†çª—çš„å¤§å°åŠä½ç½®
 		gl.glViewport(0, 0, width, height);
-		// ½«µ±Ç°¾ØÕóÄ£Ê½ÉèÎªÍ¶Ó°¾ØÕó
+		// å°†å½“å‰çŸ©é˜µæ¨¡å¼è®¾ä¸ºæŠ•å½±çŸ©é˜µ
 		gl.glMatrixMode(GL10.GL_PROJECTION);
-		// ³õÊ¼»¯µ¥Î»¾ØÕó
+		// åˆå§‹åŒ–å•ä½çŸ©é˜µ
 		gl.glLoadIdentity();
-		// ¼ÆËãÍ¸ÊÓÊÓ´°µÄ¿í¶È¡¢¸ß¶È±È
+		// è®¡ç®—é€è§†è§†çª—çš„å®½åº¦ã€é«˜åº¦æ¯”
 		float ratio = (float) width / height;
-		// µ÷ÓÃ´Ë·½·¨ÉèÖÃÍ¸ÊÓÊÓ´°µÄ¿Õ¼ä´óĞ¡¡£
+		// è°ƒç”¨æ­¤æ–¹æ³•è®¾ç½®é€è§†è§†çª—çš„ç©ºé—´å¤§å°ã€‚
 		gl.glFrustumf(-ratio, ratio, -1, 1, 1, 500);
 	}
 
-	// »æÖÆÍ¼ĞÎµÄ·½·¨
+	// ç»˜åˆ¶å›¾å½¢çš„æ–¹æ³•
 	@Override
 	public void onDrawFrame(GL10 gl)
 	{
-		// Çå³ıÆÁÄ»»º´æºÍÉî¶È»º´æ
+		// æ¸…é™¤å±å¹•ç¼“å­˜å’Œæ·±åº¦ç¼“å­˜
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
-		// ÆôÓÃ¶¥µã×ù±êÊı¾İ
+		// å¯ç”¨é¡¶ç‚¹åº§æ ‡æ•°æ®
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
-		// ÆôÓÃ¶¥µãÑÕÉ«Êı¾İ
+		// å¯ç”¨é¡¶ç‚¹é¢œè‰²æ•°æ®
 		//gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-		// ÉèÖÃµ±Ç°¾ØÕó¶ÑÕ»ÎªÄ£ĞÍ¶ÑÕ»£¬
+		// è®¾ç½®å½“å‰çŸ©é˜µå †æ ˆä¸ºæ¨¡å‹å †æ ˆï¼Œ
 		gl.glMatrixMode(GL10.GL_MODELVIEW);
 		gl.glLineWidth( 1.0f);
 		
-		// --------------------»æÖÆµÚ1¸öÍ¼ĞÎ---------------------
-		// ÖØÖÃµ±Ç°µÄÄ£ĞÍÊÓÍ¼¾ØÕó
+		// --------------------ç»˜åˆ¶ç¬¬1ä¸ªå›¾å½¢---------------------
+		// é‡ç½®å½“å‰çš„æ¨¡å‹è§†å›¾çŸ©é˜µ
 		gl.glLoadIdentity();
 		gl.glTranslatef(0f, 50.0f, -200f);
 	//	gl.glRotatef(rotate, 0f, 4.4f, 0f);       	
-		// ÉèÖÃ¶¥µãµÄÎ»ÖÃÊı¾İ
+		// è®¾ç½®é¡¶ç‚¹çš„ä½ç½®æ•°æ®
 		gl.glColor4f(0.0f, 0f, 1.1f, 1.0f);  
 		
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(LineData));
-		// ÉèÖÃ¶¥µãµÄÑÕÉ«Êı¾İ
+		// è®¾ç½®é¡¶ç‚¹çš„é¢œè‰²æ•°æ®
 		//gl.glColorPointer(4, GL10.GL_FIXED, 0, bufferUtil(rectColor));
-		// ¸ù¾İ¶¥µãÊı¾İ»æÖÆÆ½ÃæÍ¼ĞÎ
+		// æ ¹æ®é¡¶ç‚¹æ•°æ®ç»˜åˆ¶å¹³é¢å›¾å½¢
 		gl.glDrawArrays(GL10.GL_LINE_STRIP, 0, 2);
 		 gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(xpoint));  
 
-		    //´ò¿ª¶¥µãÊı×é  
+		    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
 		    gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
 		      
-		    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+		    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
 		    gl.glDrawArrays(GL10.GL_LINES, 0, 4);  
 		    gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(ypoint));  
 		    gl.glDrawArrays(GL10.GL_LINE_STRIP, 0, 4);  
@@ -163,28 +163,28 @@ private float[] ypoint={-13,28,0,
       //  gl.glRotatef(rotate, 0f, 4.4f, 0f); 
       //  gl.glRotatef(rotate, 0f, 0f, 0f); 
         gl.glLineWidth( 3.0f);
-        // ÉèÖÃ¶¥µãµÄÎ»ÖÃÊı¾İ
+        // è®¾ç½®é¡¶ç‚¹çš„ä½ç½®æ•°æ®
         gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
         gl.glColor4f(1.0f,0.2f,0.2f,0.0f);
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(rectData));
-        // ÉèÖÃ¶¥µãµÄÑÕÉ«Êı¾İ
+        // è®¾ç½®é¡¶ç‚¹çš„é¢œè‰²æ•°æ®
    
-        // ¸ù¾İ¶¥µãÊı¾İ»æÖÆÆ½ÃæÍ¼ĞÎ
+        // æ ¹æ®é¡¶ç‚¹æ•°æ®ç»˜åˆ¶å¹³é¢å›¾å½¢
         gl.glDrawArrays(GL10.GL_LINE_STRIP, 0, length/3);
         
-        //¹Ø±Õ¶¥µãÊı×é¹¦ÄÜ  
+        //å…³é—­é¡¶ç‚¹æ•°ç»„åŠŸèƒ½  
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);  
 
-        //»­Í¼½áÊø  
+        //ç”»å›¾ç»“æŸ  
         gl.glFinish();  
 	rotate+=0.3;
 	}
 	public Buffer bufferUtil(int []arr){  
 	    IntBuffer mBuffer ;  
 	      
-	    //ÏÈ³õÊ¼»¯buffer,Êı×éµÄ³¤¶È*4,ÒòÎªÒ»¸öintÕ¼4¸ö×Ö½Ú  
+	    //å…ˆåˆå§‹åŒ–buffer,æ•°ç»„çš„é•¿åº¦*4,å› ä¸ºä¸€ä¸ªintå 4ä¸ªå­—èŠ‚  
 	   ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 4);  
-	   //Êı×éÅÅÁĞÓÃnativeOrder  
+	   //æ•°ç»„æ’åˆ—ç”¨nativeOrder  
 	    qbb.order(ByteOrder.nativeOrder());  
 	     
 	    mBuffer = qbb.asIntBuffer();  
@@ -197,9 +197,9 @@ private float[] ypoint={-13,28,0,
 	public Buffer bufferUtil(float []arr){  
 		FloatBuffer mBuffer ;  
 	      
-	    //ÏÈ³õÊ¼»¯buffer,Êı×éµÄ³¤¶È*4,ÒòÎªÒ»¸öintÕ¼4¸ö×Ö½Ú  
+	    //å…ˆåˆå§‹åŒ–buffer,æ•°ç»„çš„é•¿åº¦*4,å› ä¸ºä¸€ä¸ªintå 4ä¸ªå­—èŠ‚  
 	   ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 8);  
-	   //Êı×éÅÅÁĞÓÃnativeOrder  
+	   //æ•°ç»„æ’åˆ—ç”¨nativeOrder  
 	    qbb.order(ByteOrder.nativeOrder());  
 	     
 	    mBuffer = qbb.asFloatBuffer();  
