@@ -71,15 +71,6 @@ public class commond {
     public static String taskName = "task.txt";
     public static String configName = "config.txt";
     public static String packageName = "com.example.android.BluetoothChat";
-    /*
-    public static int THRESHOLD = 0;
-    public static int MVD = -1;
-    public static int MVV = -1;
-    public static int GVD = -1;
-    public static int GVV = -1;
-    public static int MDD = -1;
-    public static int MDV = -1;
-    */
     
     public static String conntectedName = "";
     public static String ConfigMode = null;

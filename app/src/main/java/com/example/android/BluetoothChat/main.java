@@ -415,6 +415,7 @@ public class main extends Activity
 					}
 				})
 		*/
+		.setCancelable(false)
 		.setPositiveButton(commond.activeContext.getString(R.string.dilog_ok),
 				new DialogInterface.OnClickListener() {
 

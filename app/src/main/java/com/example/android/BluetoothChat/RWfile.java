@@ -26,13 +26,12 @@ public class RWfile {
 
 	
 	public static String readFile(String fileName,Context context) throws IOException{   
-	  String res="";   
-	  
+	  String res="";
 	  try{   
 	         FileInputStream fin = context.openFileInput(fileName);
 	         int length = fin.available();   
 	         byte [] buffer = new byte[length];   
-	         fin.read(buffer);       
+	         fin.read(buffer);
 	         res = EncodingUtils.getString(buffer, "UTF-8");   
 	         fin.close();       
 	     }   
@@ -68,13 +67,13 @@ public class RWfile {
 	//读assets
 	public static String read(String fileName,Context context){
 		//String fileName = "config.txt"; //文件名字 
-		String res=""; 
+		String res="";
 		try{ 
 		   //得到资源中的asset数据流
 		   InputStream in = context.getResources().getAssets().open(fileName); 
 		   int length = in.available();         
 		   byte [] buffer = new byte[length];        
-		   in.read(buffer);            
+		   in.read(buffer);
 		   in.close();
 		   res = EncodingUtils.getString(buffer, "UTF-8");
 		   if(commond.D)Log.e("TAG", res);

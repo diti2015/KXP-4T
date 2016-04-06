@@ -14,8 +14,8 @@ public class test123 {
     }  
       
     public static <T> void buildT(Class clazz, String[] sr) throws Exception {
-        String[] sa = sr[0].split(";");  
-        String s = null;  
+        String[] sa = sr[0].split(";");
+        String s;
         Map<Integer, String> map = new HashMap<Integer, String>();  
         for(int i = 0, len = sa.length; i < len; i++){  
             s = sa[i];  

@@ -65,20 +65,6 @@ public class waitting extends Activity
 		setContentView(R.layout.waitting);
 		wattingActivity = this;
 		deviceConnectLabel = (TextView)findViewById(R.id.deviceConnectLabel);
-		
-		
-//		Handler handler=new Handler();
-//		Runnable runnable=new Runnable() {
-//		    @Override
-//		    public void run() {
-//		        // TODO Auto-generated method stub
-//		    	//自动搜索设备
-//		    	wattingActivity.finish();
-//				commond.isLastTask = true;
-//				main.startDeviceListActivityAuto();
-//		    }
-//		};
-//		handler.postDelayed(runnable, 5000);//每两秒执行一次runnable.
 	}
 	
 	public void setTitle(String title){
@@ -102,10 +88,7 @@ public class waitting extends Activity
 	
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //监控/拦截/屏蔽返回键 
-	        return true; 
-	    }
-	    return super.onKeyDown(keyCode, event); 
+	    return keyCode == KeyEvent.KEYCODE_BACK || super.onKeyDown(keyCode,event);
 	}
 	
 }

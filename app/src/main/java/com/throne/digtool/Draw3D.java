@@ -28,9 +28,6 @@ import android.widget.TextView;
 import android.widget.ImageView.ScaleType;
 
 public class Draw3D extends Activity{
-	
-
-
 
     private LinearLayout top;
 	private LinearLayout side;
@@ -43,60 +40,7 @@ public class Draw3D extends Activity{
     private TextView projectnameview;
     private topRenderer top3d;
     private sideRenderer side3d;
-   // public static ImageView devicelamp = null;
     private ImageView logbtn = null;
-//
-//	@Override
-//	protected void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_3d);
-//		Intent intent = getIntent();
-//		Bundle bundle = intent.getExtras();
-//		if(bundle != null){
-//			this.xyz = (XYZVo)bundle.getSerializable("XYZVo");
-//			this.projectname=(String)bundle.getString("projectname");
-//		}
-//		float[] x= xyz.getX();
-//	       float[] y=xyz.getY();
-//	       float[] z=xyz.getZ();
-//	       float[] l=xyz.getL();
-//	       for(int i=0;i<x.length;i++)
-//	        {
-//	            NumberFormat nf = NumberFormat.getNumberInstance();
-//	            nf.setMaximumFractionDigits(4);
-//	            System.out.println(nf.format(x[i])+" "+nf.format(y[i])+" "+nf.format(z[i])+" "+nf.format(l[i]));    
-//	        }
-//		 Re=(RelativeLayout)this.findViewById(R.id.RelativeLayout);
-//		 topView = new GLSurfaceView(this);
-//		 sideiew = new GLSurfaceView(this);
-//		  top=(Button)this.findViewById(R.id.button1);
-//	        side=(Button)this.findViewById(R.id.button2);
-//	        projectnameview=(TextView)this.findViewById(R.id.projectname);
-//		// ????GLSurfaceView???????????
-//		 top3d = new topRenderer(xyz,0);
-//		 side3d = new sideRenderer(xyz);
-//		// ?GLSurfaceView?????????
-//		topView.setRenderer(top3d);
-//		sideiew.setRenderer(side3d);
-//		Re.addView(topView);  
-//		projectnameview.setText(projectname);
-//		side.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				// TODO Auto-generated method stub
-//				Re.removeViewAt(0);
-//				Re.addView(sideiew);  
-//			}});
-//		top.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View arg0) {
-//				// TODO Auto-generated method stub
-//				Re.removeViewAt(0);
-//				Re.addView(topView);  
-//			}});
-//	}
 	
 	private MyImageView imageView;
 	private Bitmap bitmap;

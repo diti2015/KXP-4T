@@ -64,7 +64,7 @@
     <string name="dilog_mark_exit">是否结束测试？</string>
     <string name="dilog_mark_giveup">是否放弃本次测试数据？</string>
     <string name="dilog_mark_nomark">还没有记录点</string>
-    <string name="dilog_mark_not_download">下次连接设备后可再次获取</string>
+    <string name="dilog_mark_not_download">再次连接设备可获取数据</string>
     <string name="dilog_mark_not_download_faild">连接故障，下次连接设备后可再次获取</string>
     <string name="dilog_mark_now">正在获取数据，请不要关闭设备</string>
     <string name="dilog_markend_not_ok">mark记录还没有结束，请稍后再试</string>

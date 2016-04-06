@@ -38,7 +38,7 @@ public class Setting extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Log.e("122", "----");
+
 		if(commond.isBlockHome)this.getWindow().setFlags(main.FLAG_HOMEKEY_DISPATCHED, main.FLAG_HOMEKEY_DISPATCHED);
 		
 		commond.activeContext = this;
@@ -47,7 +47,7 @@ public class Setting extends Activity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		setContentView(R.layout.setting);
 		logbtn = (ImageView)findViewById(R.id.logs);
-		//devicelamp = (ImageView)findViewById(R.id.deviceLamp);
+
 		onlineTest = (LinearLayout)findViewById(R.id.onlineTest);
 		threshold = (Switch)findViewById(R.id.threshold);
 		setting_layout = (LinearLayout)findViewById(R.id.settingLayout);
@@ -57,23 +57,13 @@ public class Setting extends Activity {
 		gvv = (EditText)findViewById(R.id.GVV);
 		mdd = (EditText)findViewById(R.id.MDD);
 		mdv = (EditText)findViewById(R.id.MDV);
-		
-		/*
-		mvd.setText(""+commond.MVD);
-		mvv.setText(""+commond.MVV);
-		gvd.setText(""+commond.GVD);
-		gvv.setText(""+commond.GVV);
-		mdd.setText(""+commond.MDD);
-		mdv.setText(""+commond.MDV);
-		*/
+
 		mvd.setText(""+commond.ql.get(0).getMvd());
 		mvv.setText(""+commond.ql.get(0).getMvv());
 		gvd.setText(""+commond.ql.get(0).getGvd());
 		gvv.setText(""+commond.ql.get(0).getGvv());
 		mdd.setText(""+commond.ql.get(0).getMdd());
 		mdv.setText(""+commond.ql.get(0).getMdv());
-		
-		//commond.devicelamp = devicelamp;
 		
 		logbtn.setOnClickListener(new OnClickListener(){
 			@Override
@@ -93,7 +83,7 @@ public class Setting extends Activity {
             	}
             	else {
             		setting_layout.setVisibility(8);
-            	};
+            	}
             }
         });
 		
@@ -109,18 +99,15 @@ public class Setting extends Activity {
 			public void onClick(View v) {
 				if(main._socket==null||!commond.isConntected){
 					commond.setToast(getApplication().getString(R.string.noconnted));
-					//Toast.makeText(getApplicationContext(), "设备还未连接，请先连接设备！", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				InitMark.start = true;//开始写数据倒内存
 				Intent intent = new Intent(Setting.this,Online.class) ;
-				//Intent intent = new Intent(Setting.this,BluetoothChat.class) ;
 				startActivity(intent);
 			}
 			
 		});
-		
-		//commond.setDeviceType(0);
+
 	}
 	
 	@Override
@@ -164,7 +151,6 @@ public class Setting extends Activity {
 		res += "mdv=" + mdv.getText()+ ";";
 		commond.writeFile(commond.configName, res, getBaseContext());
 	}
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
