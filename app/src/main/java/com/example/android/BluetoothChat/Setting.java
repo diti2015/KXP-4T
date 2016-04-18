@@ -65,15 +65,6 @@ public class Setting extends Activity {
 		mdd.setText(""+commond.ql.get(0).getMdd());
 		mdv.setText(""+commond.ql.get(0).getMdv());
 		
-//		logbtn.setOnClickListener(new OnClickListener(){
-//			@Override
-//			public void onClick(View v) {
-//				Intent intent = new Intent(Setting.this,logs.class) ;
-//				startActivity(intent);
-//			}
-//
-//		});
-		
 		threshold.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
