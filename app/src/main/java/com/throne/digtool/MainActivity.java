@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.android.BluetoothChat.InitMark;
-import com.example.android.BluetoothChat.logs;
+//import com.example.android.BluetoothChat.logs;
 import com.example.android.BluetoothChat.main;
 import com.example.android.BluetoothChat.commond;
 import com.liqin.instrument.R;
@@ -112,14 +112,14 @@ public class MainActivity extends Activity {
 		    //commond.devicelamp = devicelamp;
 		    logbtn = (ImageView)findViewById(R.id.logs);
 		    
-		    logbtn.setOnClickListener(new OnClickListener(){
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(MainActivity.this,logs.class) ;
-					startActivity(intent);
-				}
-				
-			});
+//		    logbtn.setOnClickListener(new OnClickListener(){
+//				@Override
+//				public void onClick(View v) {
+//					Intent intent = new Intent(MainActivity.this,logs.class) ;
+//					startActivity(intent);
+//				}
+//
+//			});
 		    
 		    xls.setOnClickListener(new OnClickListener() {
 		    	

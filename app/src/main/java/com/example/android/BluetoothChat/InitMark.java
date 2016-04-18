@@ -69,7 +69,7 @@ public class InitMark extends Activity {
 		initStart = (LinearLayout) findViewById(R.id.initStart);
 		initIntervalUp = (ImageButton) findViewById(R.id.initIntervalUp);
 		initIntervalDown = (ImageButton) findViewById(R.id.initIntervalDown);
-		logbtn= (ImageView)findViewById(R.id.logs);
+		//logbtn= (ImageView)findViewById(R.id.logs);
 		
 		//commond.devicelamp = devicelamp;
 		
@@ -101,14 +101,14 @@ public class InitMark extends Activity {
 			
 		});
 		
-		logbtn.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(InitMark.this,logs.class) ;
-				startActivity(intent);
-			}
-			
-		});
+	//	logbtn.setOnClickListener(new OnClickListener(){
+	//		@Override
+	//		public void onClick(View v) {
+				//Intent intent = new Intent(InitMark.this,logs.class) ;
+	//			startActivity(intent);
+	//		}
+	//
+	//	});
 		
 		
 		initStart.setOnClickListener(new OnClickListener(){

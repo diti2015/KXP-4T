@@ -2,9 +2,5 @@
     {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/drawable-xhdpi/ic_launcher.png"
     }
 ]

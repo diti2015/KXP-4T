@@ -132,7 +132,7 @@
     <string name="second">　秒</string>
     <string name="select_device">请选择一个设备</string>
     <string name="send">send</string>
-    <string name="serialno">序号</string>
+    <string name="serialno">No.</string>
     <string name="setting_menu_title">属性</string>
     <string name="settingcn">属性</string>
     <string name="settingen">Utility</string>

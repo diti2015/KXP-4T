@@ -121,15 +121,15 @@ public class Mark extends Activity {
 		nextCount = NPDTime;
 
 		logss = (ImageView)findViewById(R.id.logs);
-		
-		logss.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(Mark.this,logs.class) ;
-				startActivity(intent);
-			}
-			
-		});
+//
+//		logss.setOnClickListener(new OnClickListener(){
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(Mark.this,logs.class) ;
+//				startActivity(intent);
+//			}
+//
+//		});
 		mark.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {

@@ -220,7 +220,7 @@ public class commond {
     		}
     		catch (Exception e) {
     			if(D)Log.e(TAG, "读取任务文件出错");
-    			logs.setLogs("读取任务文件出错,删除任务文件内容");
+    			//logs.setLogs("读取任务文件出错,删除任务文件内容");
     			commond.setToast("读取任务文件出错,删除任务文件内容");
     			commond.writeFile(commond.taskName, "", activeContext);
     		}
@@ -295,7 +295,7 @@ public class commond {
 			try {
 				main.bRun = true;
 				if(main._socket==null){
-					logs.setLogs(activeContext.getString(R.string.noconnted));
+					//logs.setLogs(activeContext.getString(R.string.noconnted));
 					//Toast.makeText(activeContext, "设备还未连接！！", Toast.LENGTH_SHORT).show();
 					return;
 				}
@@ -304,7 +304,7 @@ public class commond {
 				if (D)Log.e(TAG, instruction.get(0)+":发送成功");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				logs.setLogs("写入指令失败，断开连接");
+				//logs.setLogs("写入指令失败，断开连接");
 				connectionLost();
 				e.printStackTrace();
 			}
@@ -511,7 +511,7 @@ public class commond {
 			e.printStackTrace();
 			Log.e(TAG, "3:xxxxxxxxxxxxxxx");
 			hasReboot = false;//以前是true，用于拦截下次的点击,现在直接重启蓝牙
-			logs.setLogs(activeContext.getString(R.string.socket_error));
+			//logs.setLogs(activeContext.getString(R.string.socket_error));
 			Intent serverIntent = new Intent(main.mainActivity, waitting.class);
     		main.mainActivity.startActivity(serverIntent);
 			main._bluetooth.disable();
@@ -537,14 +537,14 @@ public class commond {
 			        .getExternalStorageDirectory()
 			        .getCanonicalFile() + "/dragtool");
 			if (!destDir.exists()) {
-				logs.setLogs(activeContext.getString(R.string.creatfolder));
+				//logs.setLogs(activeContext.getString(R.string.creatfolder));
 				//Toast.makeText(activeContext, "创建文件夹",, Toast.LENGTH_SHORT).show();
 	            destDir.mkdirs();
 	        }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			logs.setLogs(activeContext.getString(R.string.creatfailed));
+			//logs.setLogs(activeContext.getString(R.string.creatfailed));
 			//Toast.makeText(activeContext, "创建文件夹失败!!!!", Toast.LENGTH_SHORT).show();
 		}
     }
@@ -669,7 +669,7 @@ public class commond {
     	CommondReadThread = readThread;
     	//用服务号得到socket
         try{
-        	logs.setLogs(activeContext.getString(R.string.conntecting)+main._device.getName());
+        	//logs.setLogs(activeContext.getString(R.string.conntecting)+main._device.getName());
         	if(D)Log.e(TAG, "这里会报错？"+main._device);
         	
         	if(main._device==null){
@@ -679,7 +679,7 @@ public class commond {
         	main._socket = main._device.createRfcommSocketToServiceRecord(UUID.fromString(main.MY_UUID));
         }catch(IOException e){
         	if(devicelampType!=1)setDeviceType(3);
-        	logs.setLogs(activeContext.getString(R.string.socketfailed));
+        	//logs.setLogs(activeContext.getString(R.string.socketfailed));
         	//Toast.makeText(activeContext, "连接失败1", Toast.LENGTH_SHORT).show();
         	return false;
         }
@@ -699,7 +699,7 @@ public class commond {
         	main.bRun = true;
     		commond.isConntected = true;
     		retryNum = 0;
-    		logs.setLogs( "连接"+main._device.getName()+"成功！");
+    		//logs.setLogs( "连接"+main._device.getName()+"成功！");
         	commond.writeOsNext();
     		
         }catch(IOException e){
@@ -707,7 +707,7 @@ public class commond {
         	startKeepService();
         	if(Mark.markActivity!=null){
         		Mark.markActivity.onDestroy();
-        		logs.setLogs(activeContext.getString(R.string.dilog_mark_not_download_faild));
+        		//logs.setLogs(activeContext.getString(R.string.dilog_mark_not_download_faild));
         		setToast(activeContext.getString(R.string.dilog_mark_not_download_faild));
         	}
         		//if(devicelampType!=1)setDeviceType(3);
@@ -732,7 +732,7 @@ public class commond {
         try{
         	main.is = main._socket.getInputStream();   //得到蓝牙数据输入流
 		}catch(IOException e){
-			logs.setLogs(activeContext.getString(R.string.dataflowfailed));
+			//logs.setLogs(activeContext.getString(R.string.dataflowfailed));
 			//Toast.makeText(activeContext, "接收数据失败！, Toast.LENGTH_SHORT).show();
 			return false;
 		}
@@ -762,7 +762,7 @@ public class commond {
 		main.smsg = "";
 		main.cmsg = "";
 		
-    	logs.setLogs(activeContext.getString(R.string.conntedclose));
+    	//logs.setLogs(activeContext.getString(R.string.conntedclose));
     	if(D)Log.e(TAG, "设备连接已断开");
 		//closeSocket();
 		//Toast.makeText(activeContext, "设备连接已断开", Toast.LENGTH_SHORT).show();

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+/*
 package com.example.android.BluetoothChat;
 
 
@@ -35,12 +36,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * This Activity appears as a dialog. It lists any paired devices and devices
- * detected in the area after discovery. When a device is chosen by the user,
- * the MAC address of the device is sent back to the parent Activity in the
- * result Intent.
- */
 public class logs extends Activity
 {
 	@Override
@@ -111,15 +106,5 @@ public class logs extends Activity
 		super.onDestroy();
 		finish();
 	}
-	
-	/*
-	@Override 
-	public boolean onKeyDown(int keyCode, KeyEvent event) { 
-	    if(keyCode == KeyEvent.KEYCODE_BACK) { //监控/拦截/屏蔽返回键 
-	        return true; 
-	    }
-	    return super.onKeyDown(keyCode, event); 
-	}
-	*/
-	
 }
+*/

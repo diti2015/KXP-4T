@@ -70,7 +70,7 @@
     <string name="map_menu_title">3D图</string>
 	<string name="time">时间</string>
 	<string name="depth">深度</string>
-	<string name="serialno">序号</string>
+	<string name="serialno">No.</string>
 	<string name="d_orientation">方位</string>
 	<string name="d_dip">顶角</string>
 	<string name="lx">偏移Lx</string>

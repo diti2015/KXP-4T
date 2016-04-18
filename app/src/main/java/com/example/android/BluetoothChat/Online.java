@@ -63,14 +63,14 @@ public class Online extends Activity {
 		
 		commond.devicelamp = devicelamp;
 		
-		devicelamp.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(Online.this,logs.class) ;
-				startActivity(intent);
-			}
-			
-		});
+//		devicelamp.setOnClickListener(new OnClickListener(){
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(Online.this,logs.class) ;
+//				startActivity(intent);
+//			}
+//
+//		});
 		
 		clearZero.setOnClickListener(new OnClickListener(){
 			@Override

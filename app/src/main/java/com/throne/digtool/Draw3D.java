@@ -2,7 +2,7 @@ package com.throne.digtool;
 
 import java.text.NumberFormat;
 
-import com.example.android.BluetoothChat.logs;
+//import com.example.android.BluetoothChat.logs;
 import com.example.android.BluetoothChat.main;
 import com.example.android.BluetoothChat.commond;
 import com.liqin.instrument.R;
@@ -95,14 +95,14 @@ public class Draw3D extends Activity{
         //devicelamp = (ImageView)findViewById(R.id.deviceLamp);
 	    //commond.devicelamp = devicelamp;
 	    
-        logbtn.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(Draw3D.this,logs.class) ;
-				startActivity(intent);
-			}
-			
-		});
+//        logbtn.setOnClickListener(new OnClickListener(){
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent(Draw3D.this,logs.class) ;
+//				startActivity(intent);
+//			}
+//
+//		});
         
         
 		side.setOnClickListener(new OnClickListener() {

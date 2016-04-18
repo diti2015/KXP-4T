@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context="com.justsy.bluetooth.MainActivity">
+    <!--tools:context=".MainActivity" >-->
 
     <RelativeLayout
         android:id="@+id/top_bar_layout"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
@@ -28,37 +29,29 @@
             android:textColor="#000" 
             />
 
-        <ImageView
-            android:id="@+id/logs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="22dp"
-            android:src="@drawable/logos" />
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="50dip" >
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="27dp"
-            android:text="项目名称"
-            android:textSize="20dp" />
 
         <Spinner android:id="@+id/Spinner01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView"
-           android:minWidth="250dp"
-            android:layout_alignParentRight="true"></Spinner>
-        
+            android:minWidth="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_alignParentBottom="true"></Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="项目："
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -113,7 +106,7 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="180dp"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:background="#CEDCD4" >
         
