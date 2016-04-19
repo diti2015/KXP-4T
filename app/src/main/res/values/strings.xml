@@ -212,5 +212,7 @@
 	<string name="second">　秒</string>
 	<string name="meter">　米</string>
 	<string name="initmark_interval">时间间隔：</string>
-	
+	<string name="latitude">纬度：</string>
+	<string name="find_latitude">重新获取</string>
+
 </resources>

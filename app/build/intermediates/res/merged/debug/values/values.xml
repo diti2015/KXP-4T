@@ -87,6 +87,7 @@
     <string name="dz">深度Z</string>
     <string name="export_cn">导出</string>
     <string name="export_en">Export</string>
+    <string name="find_latitude">重新获取</string>
     <string name="initmark_delaytime">延迟启动：</string>
     <string name="initmark_depth">初始深度：</string>
     <string name="initmark_device">连接设备：</string>
@@ -95,6 +96,7 @@
     <string name="initmark_proname">项目名称：</string>
     <string name="initstart_cn">开始测量</string>
     <string name="initstart_en">Start</string>
+    <string name="latitude">纬度：</string>
     <string name="left_view_cn">左视图</string>
     <string name="left_view_en">Left</string>
     <string name="logs">日志</string>

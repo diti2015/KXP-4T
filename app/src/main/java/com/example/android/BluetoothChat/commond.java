@@ -442,7 +442,7 @@ public class commond {
     }  
       
     public static String celiang(String delaytime,String intervaltime){
-    	String re = "$CELIANG,"+delaytime+","+intervaltime+"*  ";
+    	String re = "$CELIANG,"+"01,"+delaytime+","+intervaltime+","+ "3125"+"*  ";
     	if(D)Log.e(TAG, re);
 		return re;
     }

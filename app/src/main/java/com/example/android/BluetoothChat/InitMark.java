@@ -15,8 +15,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -39,6 +44,8 @@ public class InitMark extends Activity {
 	private EditText initDepth;
 	private TextView initInterval;
 	private LinearLayout initStart;
+	private TextView initLatitude;
+	private Button initFindLatitude;
 	private static Context InitMarkContext;
 	public static InitMark  InitMarkActivity = null;
 	private static AlertDialog alertActive = null;
@@ -47,6 +54,7 @@ public class InitMark extends Activity {
 	private ImageButton initIntervalDown;
 	private ImageView logbtn = null;
 	public static Boolean start = false;
+	private LocationManager mgr = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,42 +72,58 @@ public class InitMark extends Activity {
 		initDeviceName = (TextView) findViewById(R.id.initDeviceName);
 		initProjectName = (EditText) findViewById(R.id.initProjectName);
 		initDelyTimer = (EditText) findViewById(R.id.initDelyTimer);
-		initDepth = (EditText) findViewById(R.id.initDepth);
+		//initDepth = (EditText) findViewById(R.id.initDepth);
 		initInterval = (TextView) findViewById(R.id.initInterval);
 		initStart = (LinearLayout) findViewById(R.id.initStart);
-		initIntervalUp = (ImageButton) findViewById(R.id.initIntervalUp);
-		initIntervalDown = (ImageButton) findViewById(R.id.initIntervalDown);
+		initLatitude = (TextView) findViewById(R.id.textView_Latitude);
+		initFindLatitude = (Button) findViewById(R.id.button_find_latitude);
+	//	initIntervalUp = (ImageButton) findViewById(R.id.initIntervalUp);
+	//	initIntervalDown = (ImageButton) findViewById(R.id.initIntervalDown);
 		//logbtn= (ImageView)findViewById(R.id.logs);
 		
 		//commond.devicelamp = devicelamp;
+
+		mgr = (LocationManager)getSystemService(LOCATION_SERVICE);
+		if(mgr.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			getLocation();
+		}
+
+		if(commond.D) Log.e(TAG, "+ GetSystemService GPS +");
 		
 		initDeviceName.setText(commond.conntectedName);
-		
-		initIntervalUp.setOnClickListener(new OnClickListener(){
+
+		initFindLatitude.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				int val = Integer.parseInt(initInterval.getText().toString());
-				val = val +5;
-				if(val>60){
-					val = 60;
-				}
-				initInterval.setText(""+val);
+				getLocation();
 			}
-			
 		});
 		
-		initIntervalDown.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				int val = Integer.parseInt(initInterval.getText().toString());
-				val = val -5;
-				if(val<5){
-					val = 5;
-				}
-				initInterval.setText(""+val);
-			}
-			
-		});
+//		initIntervalUp.setOnClickListener(new OnClickListener(){
+//			@Override
+//			public void onClick(View v) {
+//				int val = Integer.parseInt(initInterval.getText().toString());
+//				val = val +5;
+//				if(val>60){
+//					val = 60;
+//				}
+//				initInterval.setText(""+val);
+//			}
+//
+//		});
+//
+//		initIntervalDown.setOnClickListener(new OnClickListener(){
+//			@Override
+//			public void onClick(View v) {
+//				int val = Integer.parseInt(initInterval.getText().toString());
+//				val = val -5;
+//				if(val<5){
+//					val = 5;
+//				}
+//				initInterval.setText(""+val);
+//			}
+//
+//		});
 		
 	//	logbtn.setOnClickListener(new OnClickListener(){
 	//		@Override
@@ -116,7 +140,7 @@ public class InitMark extends Activity {
 			public void onClick(View v) {
 				String initProjectNameString=initProjectName.getText().toString();
 				String initDelyTimerString=initDelyTimer.getText().toString();
-				String initDepthString=initDepth.getText().toString();
+//				String initDepthString=initDepth.getText().toString();
 				
 				if("".equals( initProjectNameString )){
 					startSimpleDailog(R.string.dilog_initmark_noProjectName);
@@ -126,10 +150,10 @@ public class InitMark extends Activity {
 					startSimpleDailog(R.string.dilog_initmark_noDelyTimer);
 					return;
 				}
-				if("".equals(initDepthString)){
-					startSimpleDailog(R.string.dilog_initmark_noDepth);
-					return;
-				}
+//				if("".equals(initDepthString)){
+//					startSimpleDailog(R.string.dilog_initmark_noDepth);
+//					return;
+//				}
 				
 				if(commond.D)Log.e(TAG, "_socket:"+main._socket+"|isConntected:"+commond.isConntected);
 				if(main._socket==null||!commond.isConntected){
@@ -190,6 +214,27 @@ public class InitMark extends Activity {
 		
 		//commond.setDeviceType(0);
 	}
+
+	private void getLocation()
+	{
+		// 获取位置管理服务
+		LocationManager locationManager;
+		String serviceName = Context.LOCATION_SERVICE;
+		locationManager = (LocationManager) this.getSystemService(serviceName);
+		// 查找到服务信息
+		Criteria criteria = new Criteria();
+		criteria.setAccuracy(Criteria.ACCURACY_FINE); // 高精度
+		criteria.setAltitudeRequired(false);
+		criteria.setBearingRequired(false);
+		criteria.setCostAllowed(true);
+		criteria.setPowerRequirement(Criteria.POWER_LOW); // 低功耗
+
+		String provider = locationManager.getBestProvider(criteria, true); // 获取GPS信息
+		Location location = locationManager.getLastKnownLocation(provider); // 通过GPS获取位置
+		double showLocation = (int)(location.getLatitude()*100)/100.0;
+		initLatitude.setText(""+ showLocation + "");
+	}
+
 	
 	private void startSimpleDailog(int Message){
 		new AlertDialog.Builder(InitMarkContext)
@@ -207,7 +252,7 @@ public class InitMark extends Activity {
 		commond.instruction.clear();
 		commond.NPName = initProjectName.getText().toString();
 		commond.NPDTime = initDelyTimer.getText().toString();
-		commond.NPDepth = initDepth.getText().toString();
+//		commond.NPDepth = initDepth.getText().toString();
 		commond.NPInterval = initInterval.getText().toString();
 		
 		
