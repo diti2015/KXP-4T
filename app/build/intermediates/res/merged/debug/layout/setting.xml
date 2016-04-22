@@ -74,7 +74,7 @@
             android:layout_height="20dp" >
 
             <TextView
-                android:id="@+id/markdepth"
+                android:id="@+id/markCount"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="3"

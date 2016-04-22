@@ -88,8 +88,8 @@ public class commond {
     public static boolean SelfTest = false;
     
     public static String NPName = "";
-    public static String NPDTime = "0";
-    public static String NPDepth = "0";
+    public static String NPTime = "0";
+    public static String NPLatitude = "0";
     public static String NPInterval = "0";
     public static boolean isConntected = false;
     
@@ -97,7 +97,7 @@ public class commond {
     static int reConnect = 1;
     public static boolean reallyTimer = false;
    
-
+	public static int taskCount;
     public static String[] taskIIArray;//第几次的数组
     public static String[] taskDepthArray;//第几次的数组
     public static boolean isLastTask = false;
@@ -207,7 +207,10 @@ public class commond {
 	    				
 	    				taskIIArray = taskIArray[1].split(",");
 	    				taskDepthArray = taskIArray[2].split(",");
-	    				
+
+						taskCount = Integer.parseInt(taskIArray[1]);
+
+
 	    				lastCount = taskIIArray.length;
 	    				if(isShow)main.dialog();
 	    				return false;
@@ -323,38 +326,23 @@ public class commond {
     }
     
     public static void writeTask(){
-    	String[] MarkTime = null;
+    	String MarkTime = null;
     	String[] MarkDepth = null;
-    	MarkTime = Mark.MarkTime.split("#");
-    	MarkDepth = Mark.MarkDepth.split("#");
+    	MarkTime = "600";
+    //	MarkDepth = Mark.MarkDepth.split("#");
     	
     	String r = "";
 		String deviceName = main._device.getName();
 		int NPInterval = Integer.parseInt(commond.NPInterval);
 		
 		String MarkTimeN = "";
+
+		int c =  Integer.parseInt(MarkTime.toString())/NPInterval;
+		MarkTimeN += ""+c;
+
 		
-		for(int i=1;i<MarkTime.length;i++){
-			int c =  Integer.parseInt(MarkTime[i].toString())/NPInterval;
-			if(i==MarkTime.length-1){
-				MarkTimeN += ""+c;
-			}
-			else {
-				MarkTimeN += c +",";
-			}
-		};
-		
-		String MarkDepthN = "";
-		
-		for(int ii=1;ii<MarkDepth.length;ii++){
-			if(ii==MarkDepth.length-1){
-				MarkDepthN += ""+MarkDepth[ii];
-			}
-			else {
-				MarkDepthN += MarkDepth[ii] +",";
-			}
-		};
-		
+		String MarkDepthN = "100";
+
 		r = deviceName + "," + 
 				commond.NPInterval + "," +
 				commond.NPName + "&" +
@@ -441,14 +429,15 @@ public class commond {
         //MDV  = ql.get(0).getMdv();
     }  
       
-    public static String celiang(String delaytime,String intervaltime){
-    	String re = "$CELIANG,"+"01,"+delaytime+","+intervaltime+","+ "3125"+"*  ";
+    public static String celiang(String delaytime,String intervaltime,String latitude){
+
+    	String re = "$CELIANG,"+"00,"+delaytime+","+intervaltime+","+ latitude +"*  ";
     	if(D)Log.e(TAG, re);
 		return re;
     }
     
     public static String caxun(int time){
-    	String re = "$CAXUN,"+time+"*  ";
+    	String re = "$CAXUN,"+"00"+"*  ";
     	if(D)Log.e(TAG, re);
 		return re;
     }

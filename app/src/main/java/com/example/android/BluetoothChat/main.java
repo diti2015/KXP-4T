@@ -374,12 +374,13 @@ public class main extends Activity
 							int whichButton) {
 						InitMark.start = true;//开始写数据倒内存
 						//写入队列
-	    				for(int a=0;a<commond.taskIIArray.length;a++){
-	    					//Log.e(TAG, "f:"+commond.taskIIArray[a]);
-	    					String f= commond.taskIIArray[a];
-	    					int caxunId = Integer.parseInt(f);
-	    					commond.writeOs(commond.caxun(caxunId));
-	    				}
+//	    				for(int a=0;a<commond.taskCount;a++){
+//	    					//Log.e(TAG, "f:"+commond.taskIIArray[a]);
+//	    					String f= commond.taskIIArray[a];
+//	    					int caxunId = Integer.parseInt(f);
+//	    					commond.writeOs(commond.caxun(caxunId));
+//	    				}
+						commond.writeOs(commond.caxun(0));
 	    				dialog.dismiss();
 //	    				context.startProgress();
 	    				commond.writeOsNext();
@@ -503,14 +504,15 @@ public class main extends Activity
 			//if(smsgArray[smsgArray.length-1].length()<=1){return;}
 			int matchlen = smsg.length();
 			if(matchlen<=1)return;
-			
-			int matchportS = smsg.indexOf("$");//匹配开始位
+
+			int matchportS = smsg.indexOf("#");
+			matchportS = smsg.indexOf("$");//匹配开始位
 			if(matchportS<0)return;
 			
 			int matchportE = smsg.indexOf("*");//匹配结束位
 			if(matchportE<0)return;
 			
-			int matchportEE = smsg.indexOf("#");//匹配结束位
+			int matchportEE = smsg.indexOf("&");//匹配结束位
 			if(matchportEE<0)return;
 			
 			if(matchportS>matchportEE){//开始位大于结束位
@@ -593,7 +595,7 @@ public class main extends Activity
     					//Log.e(TAG, "fmsg:"+fmsg);
     					for(i=0;i<num;i++){
     						if((buffer[i] == 0x0d)&&(buffer[i+1]==0x0a)){
-    							buffer_new[n] = 0x23;
+    							buffer_new[n] = 0x26;
     							i++;
     						}else{
     							buffer_new[n] = buffer[i];

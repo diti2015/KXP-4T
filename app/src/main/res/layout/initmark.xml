@@ -61,7 +61,7 @@
         android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/markdepth"
+        android:id="@+id/markCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
@@ -127,7 +127,7 @@
         android:text="@string/initmark_interval"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="18sp"
-        android:layout_below="@+id/markdepth"
+        android:layout_below="@+id/markCount"
         android:layout_alignParentLeft="true" />
 
     <EditText
@@ -145,7 +145,7 @@
         android:id="@+id/initDelyTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/markdepth"
+        android:layout_alignBottom="@+id/markCount"
         android:layout_alignLeft="@+id/initProjectName"
         android:layout_toLeftOf="@+id/textView4"
         android:ems="10"
@@ -182,7 +182,7 @@
             android:text="@string/latitude"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="18sp"
-            android:layout_below="@+id/markdepth"
+            android:layout_below="@+id/markCount"
             android:layout_alignParentLeft="true"
             android:layout_gravity="bottom"
             android:layout_weight="0.33" />

@@ -50,8 +50,8 @@ public class InitMark extends Activity {
 	public static InitMark  InitMarkActivity = null;
 	private static AlertDialog alertActive = null;
 	//public static ImageView devicelamp = null;
-	private ImageButton initIntervalUp;
-	private ImageButton initIntervalDown;
+//	private ImageButton initIntervalUp;
+//	private ImageButton initIntervalDown;
 	private ImageView logbtn = null;
 	public static Boolean start = false;
 	private LocationManager mgr = null;
@@ -232,7 +232,8 @@ public class InitMark extends Activity {
 		String provider = locationManager.getBestProvider(criteria, true); // 获取GPS信息
 		Location location = locationManager.getLastKnownLocation(provider); // 通过GPS获取位置
 		double showLocation = (int)(location.getLatitude()*100)/100.0;
-		initLatitude.setText(""+ showLocation + "");
+		//initLatitude.setText("123"+ showLocation + "");
+		initLatitude.setText(showLocation + "");
 	}
 
 	
@@ -251,8 +252,10 @@ public class InitMark extends Activity {
 		start = true;
 		commond.instruction.clear();
 		commond.NPName = initProjectName.getText().toString();
-		commond.NPDTime = initDelyTimer.getText().toString();
-//		commond.NPDepth = initDepth.getText().toString();
+		commond.NPTime = initDelyTimer.getText().toString();
+		commond.NPLatitude = initLatitude.getText().toString();
+		commond.NPLatitude = String.valueOf(Float.parseFloat(commond.NPLatitude)*100);
+		commond.NPLatitude = commond.NPLatitude.substring(0,commond.NPLatitude.length()-2);
 		commond.NPInterval = initInterval.getText().toString();
 		
 		
@@ -260,8 +263,16 @@ public class InitMark extends Activity {
 		.setMessage(getApplication().getString(R.string.dilog_watting))
 		.show();
 		
-		
-		commond.writeOs(commond.celiang(commond.NPDTime, commond.NPInterval));
+		int strlen = commond.NPLatitude.length();
+		for(int i = strlen;i<4;i++) commond.NPLatitude = "0" + commond.NPLatitude;
+
+		strlen = commond.NPInterval.length();
+		for(int i = strlen;i<3;i++) commond.NPInterval = "0" + commond.NPInterval;
+
+		strlen = commond.NPTime.length();
+		for(int i = strlen;i<3;i++) commond.NPTime = "0" + commond.NPTime;
+
+		commond.writeOs(commond.celiang(commond.NPTime, commond.NPInterval,commond.NPLatitude));
 		commond.writeOsNext();
 	}
 	

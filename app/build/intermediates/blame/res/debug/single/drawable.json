@@ -12,8 +12,16 @@
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/darkblue_up.png"
     },
     {
+        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/yellow_mark_up.png",
+        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_mark_up.png"
+    },
+    {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/lgreen_button.xml",
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/lgreen_button.xml"
+    },
+    {
+        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/yellow_mark_button.xml",
+        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_mark_button.xml"
     },
     {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/interval_down.png",
@@ -64,6 +72,10 @@
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_button.xml"
     },
     {
+        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/yellow_mark_down.png",
+        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_mark_down.png"
+    },
+    {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/sites48.png",
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/sites48.png"
     },
@@ -84,12 +96,12 @@
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_up.png"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/app_icon.png",
-        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/app_icon.png"
-    },
-    {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/main_bg.png",
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/main_bg.png"
+    },
+    {
+        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/app_icon.png",
+        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/app_icon.png"
     },
     {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/lgreen_up.png",
