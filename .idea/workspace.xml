@@ -2614,7 +2614,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463379863776</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="全部功能完成，陀螺第一个版本">
+      <created>1463381150708</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1463381150708</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
