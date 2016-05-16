@@ -228,6 +228,8 @@ public class main extends Activity
 	       
 	      //读取配置文件
 		  commond.readTXT(commond.configName,getBaseContext(),true);
+
+		 commond.readTXT(commond.taskName,getBaseContext(),false);
 		  
 		  //写入背景
 		  Bitmap newBg= commond.readMainBg();
@@ -374,13 +376,14 @@ public class main extends Activity
 							int whichButton) {
 						InitMark.start = true;//开始写数据倒内存
 						//写入队列
-//	    				for(int a=0;a<commond.taskCount;a++){
-//	    					//Log.e(TAG, "f:"+commond.taskIIArray[a]);
-//	    					String f= commond.taskIIArray[a];
-//	    					int caxunId = Integer.parseInt(f);
-//	    					commond.writeOs(commond.caxun(caxunId));
-//	    				}
-						commond.writeOs(commond.caxun(0));
+						//diti
+	    				for(int a=0;a<commond.lastCount;a++){
+	    					//Log.e(TAG, "f:"+commond.taskIIArray[a]);
+	   // 					String f= a+"";
+	    //					int caxunId = Integer.parseInt(f);
+	    					commond.writeOs(commond.caxun(a));
+	    				}
+	//					commond.writeOs(commond.caxun(0));
 	    				dialog.dismiss();
 //	    				context.startProgress();
 	    				commond.writeOsNext();
@@ -506,25 +509,25 @@ public class main extends Activity
 			if(matchlen<=1)return;
 
 			int matchportS = smsg.indexOf("#");
-			matchportS = smsg.indexOf("$");//匹配开始位
+//			matchportS = smsg.indexOf("$");//匹配开始位
 			if(matchportS<0)return;
 			
 			int matchportE = smsg.indexOf("*");//匹配结束位
 			if(matchportE<0)return;
 			
-			int matchportEE = smsg.indexOf("&");//匹配结束位
-			if(matchportEE<0)return;
+	//		int matchportEE = smsg.indexOf("&");//匹配结束位
+	//		if(matchportEE<0)return;
 			
-			if(matchportS>matchportEE){//开始位大于结束位
-				if(commond.D)Log.e(TAG, "smsg1:"+smsg);
-				smsg = smsg.replace("#", "|");
-				if(commond.D)Log.e(TAG, "smsg2:"+smsg);
-				matchportE = smsg.indexOf("#");
-				
-				//if(D)Log.e(TAG, "matchportE:"+matchportE);
-				//if(D)Log.e(TAG, "指令不全，废弃：matchportE:"+matchportE);
-				if(matchportE<0)return;
-			}
+//			if(matchportS>matchportEE){//开始位大于结束位
+//				if(commond.D)Log.e(TAG, "smsg1:"+smsg);
+//				smsg = smsg.replace("&", "|");
+//				if(commond.D)Log.e(TAG, "smsg2:"+smsg);
+//				matchportE = smsg.indexOf("&");
+//
+//				//if(D)Log.e(TAG, "matchportE:"+matchportE);
+//				//if(D)Log.e(TAG, "指令不全，废弃：matchportE:"+matchportE);
+//				if(matchportE<0)return;
+//			}
 			bRun = false;
 			//if(D)Log.e(TAG, "matchportE:"+matchportE+"|matchportS:"+matchportS+"|matchlen:"+matchlen);
 			if(commond.D)Log.e(TAG, "smsg3:"+smsg);
@@ -536,14 +539,15 @@ public class main extends Activity
 			bluetoothIntent.putExtra("readMessage",matchstr);
 			mainActivity.sendBroadcast(bluetoothIntent);
             
-            String rubbishstr = smsg.substring(matchportS,matchportEE+1);
+//            String rubbishstr = smsg.substring(matchportS,matchportEE+1);
+			String rubbishstr = smsg.substring(0,matchportE+1);
             //Log.e(TAG, "rubbishstr:"+rubbishstr);
 			smsg=smsg.replace(rubbishstr, "");//丢弃已执行的部分
 		    Log.e(TAG, "smsg4:"+smsg);
 			
 			//数据残留处理
 			if(matchstr.equals("CLOK")){
-				int matchnext = smsg.indexOf("$");//匹配结束位
+				int matchnext = smsg.indexOf("#");//匹配结束位
 				if(matchnext<0){
 					smsg="";
 				}				
@@ -592,12 +596,13 @@ public class main extends Activity
     						continue;
     					}
     					fmsg+=s0;    //保存收到数据
-    					//Log.e(TAG, "fmsg:"+fmsg);
+    		//			Log.e(TAG, "fmsg:"+fmsg);
     					for(i=0;i<num;i++){
     						if((buffer[i] == 0x0d)&&(buffer[i+1]==0x0a)){
     							buffer_new[n] = 0x26;
     							i++;
-    						}else{
+    						}
+							else{
     							buffer_new[n] = buffer[i];
     						}
     						n++;

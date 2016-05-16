@@ -6,6 +6,9 @@
     <string name="MarkDip">倾角#</string>
     <string name="MarkId">序号#</string>
     <string name="MarkOrientation">方位#</string>
+    <string name="MarkStatusEnd">     自由操作\n提升/下放探棒</string>
+    <string name="MarkStatusIng">            正在测量\n寻北过程中，保持静止</string>
+    <string name="MarkStatusReady">          准备测量\n尽快到位，等待静止</string>
     <string name="MarkTime">记录时间#</string>
     <string name="app_name">LIQING</string>
     <string name="autocontdevice">正在智能识别设备，请稍后</string>
@@ -52,6 +55,8 @@
     <string name="dilog_exit">是否退出程序？</string>
     <string name="dilog_export_fail">导出失败</string>
     <string name="dilog_export_success">导出成功，导出至sd卡digtoolxls</string>
+    <string name="dilog_initmark_DelayTimeInt">延迟启动不能小于3分钟</string>
+    <string name="dilog_initmark_IntervalInt">时间间隔不能小于3分钟</string>
     <string name="dilog_initmark_noDelyTimer">延迟启动不能为空</string>
     <string name="dilog_initmark_noDepth">初始深度不能为空</string>
     <string name="dilog_initmark_noProjectName">项目名称不能为空</string>

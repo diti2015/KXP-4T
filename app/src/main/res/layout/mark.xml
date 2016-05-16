@@ -94,40 +94,8 @@
         android:height="100dp"
         android:width="250dp" />
      -->
-    <RelativeLayout
-         android:id="@+id/mark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:height="100dp"
-        android:width="250dp"
-        android:background="@drawable/blue_mark_button"
-        android:layout_below="@+id/mainTitleLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/markCount">
-        
-	 <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="测量"
-        android:textColor="#000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-	 <TextView
-        android:id="@+id/markCountDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:text="3"
-        android:textColor="#000"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    </RelativeLayout>
-    
-	<LinearLayout
+    <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
@@ -154,5 +122,48 @@
         </LinearLayout>
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/mark"
+        android:layout_alignTop="@+id/mark"
+        android:weightSum="1">
+
+        <RelativeLayout
+             android:id="@+id/mark"
+            android:layout_width="match_parent"
+            android:layout_height="262dp"
+            android:height="100dp"
+            android:width="250dp"
+            android:background="@drawable/blue_mark_button"
+            android:layout_below="@+id/mainTitleLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp">
+
+         <TextView
+            android:id="@+id/textViewMakrStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:text="@string/MarkStatusEnd"
+            android:textColor="#000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+             android:layout_above="@+id/markCountDown"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="64dp" />
+
+         <TextView
+            android:id="@+id/markCountDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textColor="#000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+             android:layout_marginBottom="75dp"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

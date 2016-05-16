@@ -181,6 +181,8 @@
 	<string name="dilog_initmark_noProjectName">项目名称不能为空</string>
 	<string name="dilog_initmark_noDelyTimer">延迟启动不能为空</string>
 	<string name="dilog_initmark_noDepth">初始深度不能为空</string>
+	<string name="dilog_initmark_DelayTimeInt">延迟启动不能小于3分钟</string>
+	<string name="dilog_initmark_IntervalInt">时间间隔不能小于3分钟</string>
 	
 	<!-- mark -->
 	<string name="celiang_menu_title">测量</string>
@@ -199,6 +201,9 @@
 	<string name="MarkDepth">深度#</string>
 	<string name="MarkOrientation">方位#</string>
 	<string name="MarkDip">倾角#</string>
+	<string name="MarkStatusIng">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;正在测量\n寻北过程中，保持静止</string>
+	<string name="MarkStatusReady">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;准备测量\n尽快到位，等待静止</string>
+	<string name="MarkStatusEnd">&#160;&#160;&#160;&#160;&#160;自由操作\n提升/下放探棒</string>
 	
 	<!-- progress -->
 	<string name="bulebooth_type">蓝牙状态：</string>

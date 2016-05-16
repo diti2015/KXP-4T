@@ -1,7 +1,10 @@
 package com.throne.digtool;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +15,7 @@ import java.util.Map;
 
 import com.example.android.BluetoothChat.InitMark;
 //import com.example.android.BluetoothChat.logs;
+import com.example.android.BluetoothChat.RWfile;
 import com.example.android.BluetoothChat.main;
 import com.example.android.BluetoothChat.commond;
 import com.liqin.instrument.R;
@@ -24,6 +28,7 @@ import jxl.write.biff.RowsExceededException;
 
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.app.Activity;
@@ -34,17 +39,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -55,13 +63,18 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	private boolean depthDialogFlag = true;
     private LayoutInflater mInflater;
 	private ListView lv;
 	private LinearLayout xls;
 	private LinearLayout td;
 	private XYZVo xyz;
 	private Intent intent;
-	
+
+	private List<Map<String,Object>> list;
+	private BaseAdapter simpleAdapter;
+	private String name;
+
 	private Spinner spinner;
 	 private ArrayAdapter<String> adapter;
 	private String[] filename;
@@ -85,7 +98,10 @@ public class MainActivity extends Activity {
 //				
 //			}
 			Bundle b = msg.getData();
-           String name = b.getString("name");
+//diti
+//           String name = b.getString("name");
+			name = b.getString("name");
+//end diti
            if(name!=null)
 	        dolist(name);
 			super.handleMessage(msg);
@@ -298,7 +314,10 @@ public void dolist(String name){
    
     NumberFormat nf = NumberFormat.getNumberInstance();
     nf.setMaximumFractionDigits(3);
-    final List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
+//diti
+//    final List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
+	list =new ArrayList<Map<String,Object>>();
+//end diti
     HashMap<String, Object> m1=new HashMap<String,Object>();
 //    深度(米)	倾角(度)	方位(度)	偏移Lx	偏移Ly	深度Z	
     
@@ -340,8 +359,10 @@ public void dolist(String name){
 //    lv.setAdapter(new SimpleAdapter(this, list, R.layout.digital
 //    , new String[]{"t0","t1","t2","t3","t4","t5","t6","t7"}
 //    , new int[]{R.id.t0,R.id.t1,R.id.t2,R.id.t3,R.id.t4,R.id.t5,R.id.t6,R.id.t7}));
-    BaseAdapter simpleAdapter=new BaseAdapter() {
-        
+//diti
+//    BaseAdapter simpleAdapter=new BaseAdapter() {
+	 simpleAdapter=new BaseAdapter() {
+//end diti
         @Override
         public View getView(int position, View convertView, ViewGroup arg2) {
             // TODO Auto-generated method stub  
@@ -395,11 +416,19 @@ public void dolist(String name){
 //         line.addView(image);
 //         line.addView(T);
 //        return line;
-        }  
+        }
+
+
         
         @Override
         public long getItemId(int arg0) {
-            // TODO Auto-generated method stub
+			if(depthDialogFlag && arg0 > 0){
+				Map i = new HashMap<String, Object>();
+				i = list.get(arg0);
+				String ii = (String) i.get("t1");
+				depthDialog(arg0,ii);
+				depthDialogFlag = false;
+			}
             return arg0;
         }
         
@@ -451,7 +480,81 @@ protected void dialog() {
 	       }); 
 	AlertDialog alert = builder.create(); 
 	alert.show();
-	 }
+}
+
+
+protected void depthDialog(final int intDepth, String stringDepth) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		final EditText depthEditText = new EditText(this);
+		depthEditText.setText(stringDepth);
+		depthEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
+		depthEditText.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
+		builder.setMessage("请输入序号" + intDepth + "的深度：")
+				.setCancelable(false)
+				.setView(depthEditText)
+				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						String dai = depthEditText.getText().toString();
+
+						Map i = new HashMap<String, Object>();
+						i = list.get(intDepth);
+						i.put("t1",dai);
+						list.set(intDepth,i);
+						i = list.get(intDepth);
+
+						BufferedReader f;
+						try {
+							f = new BufferedReader( new InputStreamReader(new FileInputStream(new File(Environment
+									.getExternalStorageDirectory()
+									.getCanonicalFile() + "/dragtool/"+name))));
+
+							String lineTxt = null;
+							String num="";
+
+							while((lineTxt = f.readLine()) != null){
+
+								num=num+lineTxt;
+
+							}
+							String[] s= num.split("#");
+							s[(intDepth-1)*4 + 1] = dai;
+
+							String Slong = "";
+							int sl = s.length;
+							for(int sli=0;sli<sl;sli++){
+								Slong += s[sli] + "#";
+							}
+
+							try {
+								RWfile.saveToSDCard(name, Slong);
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							f.close();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+						lv.setAdapter(simpleAdapter);
+
+						dolist(name);
+
+						depthDialogFlag = true;
+						dialog.cancel();
+					}
+				})
+				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						String tao = depthEditText.getText().toString();
+						depthDialogFlag = true;
+						dialog.cancel();
+					}
+				});
+		AlertDialog alert = builder.create();
+		alert.show();
+	}
 
 public class FileComparator implements Comparator<FileInfo> {  
     public int compare(FileInfo file1, FileInfo file2) {  

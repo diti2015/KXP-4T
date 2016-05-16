@@ -39,15 +39,15 @@
         android:id="@+id/threshold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/textViewMakrStatus"
+        android:layout_alignBottom="@+id/textViewMakrStatus"
         android:layout_alignParentRight="true"
         android:layout_marginRight="23dp"
         android:text=""/>
     
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewMakrStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

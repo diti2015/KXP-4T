@@ -67,7 +67,7 @@ public class Draw3D extends Activity{
 		Bundle bundle = intent.getExtras();
 		if(bundle != null){
 			this.xyz = (XYZVo)bundle.getSerializable("XYZVo");
-			this.projectname=(String)bundle.getString("projectname");
+			this.projectname=(String)bundle.getString("projectname") ;
 		}
 		float[] x= xyz.getX();
 	       float[] y=xyz.getY();

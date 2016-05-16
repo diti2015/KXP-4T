@@ -2,6 +2,7 @@ package com.example.android.BluetoothChat;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -44,17 +45,19 @@ public class InitMark extends Activity {
 	private EditText initDepth;
 	private TextView initInterval;
 	private LinearLayout initStart;
-	private TextView initLatitude;
+	private EditText initLatitude;
 	private Button initFindLatitude;
 	private static Context InitMarkContext;
 	public static InitMark  InitMarkActivity = null;
 	private static AlertDialog alertActive = null;
+//	private LocationListener locationListener;
 	//public static ImageView devicelamp = null;
 //	private ImageButton initIntervalUp;
 //	private ImageButton initIntervalDown;
 	private ImageView logbtn = null;
 	public static Boolean start = false;
 	private LocationManager mgr = null;
+	private String provider;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,29 +78,70 @@ public class InitMark extends Activity {
 		//initDepth = (EditText) findViewById(R.id.initDepth);
 		initInterval = (TextView) findViewById(R.id.initInterval);
 		initStart = (LinearLayout) findViewById(R.id.initStart);
-		initLatitude = (TextView) findViewById(R.id.textView_Latitude);
-		initFindLatitude = (Button) findViewById(R.id.button_find_latitude);
+		initLatitude = (EditText) findViewById(R.id.editText_Latitude);
+//		initFindLatitude = (Button) findViewById(R.id.button_find_latitude);
 	//	initIntervalUp = (ImageButton) findViewById(R.id.initIntervalUp);
 	//	initIntervalDown = (ImageButton) findViewById(R.id.initIntervalDown);
 		//logbtn= (ImageView)findViewById(R.id.logs);
 		
 		//commond.devicelamp = devicelamp;
 
-		mgr = (LocationManager)getSystemService(LOCATION_SERVICE);
-		if(mgr.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-			getLocation();
+	//	openGPSSettings();
+//		mgr = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+//		// 查找到服务信息
+//		Criteria criteria = new Criteria();
+//		criteria.setAccuracy(Criteria.ACCURACY_FINE); // 高精度
+//		criteria.setAltitudeRequired(false);
+//		criteria.setBearingRequired(false);
+//		criteria.setCostAllowed(true);
+//		criteria.setPowerRequirement(Criteria.POWER_LOW); // 低功耗
+//		String provider = mgr.getBestProvider(criteria, true); // 获取GPS信息
+//		Location location = mgr.getLastKnownLocation(provider); // 通过GPS获取位置
+//		while(location == null)
+//		{
+//			mgr.requestLocationUpdates("gps",60000,1,locationListener);
+//		//	location = mgr.getLastKnownLocation(provider); //
+//		}
+//		double showLocation = (int)(location.getLatitude()*100)/100.0;
+//		//initLatitude.setText("123"+ showLocation + "");
+	//	initLatitude.setText(31.25 + "");
+	//	if(mgr.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+	//		getLocation();
+	//	}
+
+	//	mLocationListener = new LocationListener();
+
+		initLatitude.setText("31.25");
+		mgr = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		List<String> providerList = mgr.getProviders(true);
+		if(providerList.contains(LocationManager.GPS_PROVIDER)){
+			provider = LocationManager.GPS_PROVIDER;
+		}else if(providerList.contains(LocationManager.NETWORK_PROVIDER)){
+			provider = LocationManager.NETWORK_PROVIDER;
+		}else{
+			if(commond.D) Log.e(TAG, "No location provider to use");
+			return;
 		}
+
+		Location location = mgr.getLastKnownLocation(provider);
+		if(location != null){
+			double showLocation = (int)(location.getLatitude()*100)/100.0;
+			initLatitude.setText(showLocation + "");
+		}
+
+		mgr.requestLocationUpdates(provider,5000,1,locationListener);
+
 
 		if(commond.D) Log.e(TAG, "+ GetSystemService GPS +");
 		
 		initDeviceName.setText(commond.conntectedName);
 
-		initFindLatitude.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				getLocation();
-			}
-		});
+//		initFindLatitude.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				getLocation();
+//			}
+//		});
 		
 //		initIntervalUp.setOnClickListener(new OnClickListener(){
 //			@Override
@@ -134,13 +178,12 @@ public class InitMark extends Activity {
 	//
 	//	});
 		
-		
 		initStart.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
 				String initProjectNameString=initProjectName.getText().toString();
 				String initDelyTimerString=initDelyTimer.getText().toString();
-//				String initDepthString=initDepth.getText().toString();
+				String initIntervalString =initInterval.getText().toString();
 				
 				if("".equals( initProjectNameString )){
 					startSimpleDailog(R.string.dilog_initmark_noProjectName);
@@ -150,10 +193,23 @@ public class InitMark extends Activity {
 					startSimpleDailog(R.string.dilog_initmark_noDelyTimer);
 					return;
 				}
-//				if("".equals(initDepthString)){
-//					startSimpleDailog(R.string.dilog_initmark_noDepth);
-//					return;
-//				}
+				if("".equals(initIntervalString)){
+					startSimpleDailog(R.string.dilog_initmark_noDepth);
+					return;
+				}
+
+				int initDelyTimerInt =  Integer.parseInt(initDelyTimerString);
+				int initIntervalInt =  Integer.parseInt(initIntervalString);
+
+				if(initDelyTimerInt < 3){
+					startSimpleDailog(R.string.dilog_initmark_DelayTimeInt);
+					return;
+				}
+
+				if(initIntervalInt < 3){
+					startSimpleDailog(R.string.dilog_initmark_IntervalInt);
+					return;
+				}
 				
 				if(commond.D)Log.e(TAG, "_socket:"+main._socket+"|isConntected:"+commond.isConntected);
 				if(main._socket==null||!commond.isConntected){
@@ -187,18 +243,16 @@ public class InitMark extends Activity {
 
 								public void onClick(DialogInterface dialog,
 										int whichButton) {
+									InitMark.start = true;//开始写数据倒内存
 									//写入队列
-									
-				    				for(int a=0;a<commond.taskIIArray.length;a++){
-				    					if(commond.D)Log.e(TAG, "f:"+commond.taskIIArray[a]);
-				    					String f= commond.taskIIArray[a];
-				    					int caxunId = Integer.parseInt(f);
-				    					commond.writeOs(commond.caxun(caxunId));
-				    				}
-				    				dialog.dismiss();
-				    				commond.writeOsNext();
-//				    				context.startProgress();
-				    				commond.writeOsNext();
+									//diti
+									for(int a=0;a<commond.lastCount;a++){
+										commond.writeOs(commond.caxun(a));
+									}
+									dialog.dismiss();
+									commond.writeOsNext();
+									if(commond.D)Log.e(TAG, "keep2");
+									commond.startKeepService();
 				    				Intent intentaa = new Intent(InitMarkContext,Progress.class) ;
 				    				InitMarkContext.startActivity(intentaa);
 				    				
@@ -213,6 +267,21 @@ public class InitMark extends Activity {
 		initProjectName.setText(date);
 		
 		//commond.setDeviceType(0);
+	}
+
+
+	private void openGPSSettings() {
+		LocationManager alm = (LocationManager) this
+				.getSystemService(Context.LOCATION_SERVICE);
+		if (alm
+				.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) {
+			if(commond.D) Log.e(TAG, "GPS模块正常");
+			return;
+		}
+		if(commond.D) Log.e(TAG, "请开启GPS！");
+		Intent intent = new Intent(Settings.ACTION_SECURITY_SETTINGS);
+		startActivityForResult(intent,0); //此为设置完成后返回到获取界面
+
 	}
 
 	private void getLocation()
@@ -281,7 +350,33 @@ public class InitMark extends Activity {
 	{
 		if(commond.D)Log.e(TAG, "onDestroy");
 		super.onDestroy();
+		if(mgr != null){
+			mgr.removeUpdates(locationListener);
+		}
 		finish();
+	};
+
+	LocationListener locationListener = new LocationListener() {
+		@Override
+		public void onLocationChanged(Location location) {
+			double showLocation = (int)(location.getLatitude()*100)/100.0;
+			initLatitude.setText(showLocation + "");
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+
+		}
 	};
 	
 	@Override

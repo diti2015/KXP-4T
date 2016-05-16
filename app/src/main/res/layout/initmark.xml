@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewMakrStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -42,10 +42,10 @@
         android:id="@+id/initDeviceName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/textViewMakrStatus"
+        android:layout_alignBottom="@+id/textViewMakrStatus"
         android:layout_marginLeft="24dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/textViewMakrStatus"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -123,11 +123,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="@string/initmark_interval"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="18sp"
-        android:layout_below="@+id/markCount"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true" />
 
     <EditText
@@ -165,48 +164,28 @@
         android:layout_alignRight="@+id/initDelyTimer"
         android:layout_alignLeft="@+id/initDelyTimer" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.33"
+        android:layout_alignBottom="@+id/editText_Latitude"
         android:layout_alignParentLeft="true"
-        android:layout_above="@+id/initStart"
-        android:layout_alignParentRight="true"
-        android:weightSum="1">
+        android:layout_toLeftOf="@+id/initInterval" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@string/latitude"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18sp"
-            android:layout_below="@+id/markCount"
-            android:layout_alignParentLeft="true"
-            android:layout_gravity="bottom"
-            android:layout_weight="0.33" />
-
-        <TextView
-            android:id="@+id/textView_Latitude"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView1"
-            android:layout_alignBottom="@+id/textView1"
-            android:layout_marginLeft="24dp"
-            android:layout_toRightOf="@+id/textView1"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_weight="0.33"
-            android:layout_gravity="bottom" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/find_latitude"
-            android:id="@+id/button_find_latitude"
-            android:layout_weight="0.33"
-            android:layout_gravity="bottom" />
-    </LinearLayout>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText_Latitude"
+        android:layout_weight="0.33"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_alignRight="@+id/initInterval" />
 
 </RelativeLayout>

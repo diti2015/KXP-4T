@@ -67,6 +67,8 @@ public class commond {
    
     
     public static List<Question> ql;
+
+	public static String DeviceName;
     
     public static String taskName = "task.txt";
     public static String configName = "config.txt";
@@ -85,6 +87,8 @@ public class commond {
     public static String ZLFW = "$ZLFW*  ";
     public static String FWDJ = "$FWDJ*  ";
     public static String FWFW = "$FWFW*  ";
+	public static String REPCOM = "$REPCOM*  ";
+	public static String CHKHZ = "$CHKHZ*  ";
     public static boolean SelfTest = false;
     
     public static String NPName = "";
@@ -193,11 +197,15 @@ public class commond {
 	    			
 	    			String[] taskIArray = taskArray[i].split("&");
 	    			String[] taskII = taskIArray[0].split(",");
-	    			
+	    			DeviceName = taskII[0];
 	    			
 	    			NPName = taskII[2];
 	    			NPInterval = taskII[1];
-	    			
+
+					int interval =  Integer.parseInt(NPInterval);
+					if(interval == 0) return true;
+					if(main._device == null) return true;
+
 	    			if(taskII[0].equals(main._device.getName())){
 	    				hasSameDevice = true;
 	    				isLastTask = true;
@@ -212,8 +220,12 @@ public class commond {
 
 
 	    				lastCount = taskIIArray.length;
-	    				if(isShow)main.dialog();
-	    				return false;
+
+						lastCount = Integer.parseInt(taskII[1]);
+
+						//interval =  Integer.parseInt(NPInterval);
+	    				if(isShow)	main.dialog();
+						return false;
 	    			}
 	    			
 	    		}
@@ -248,7 +260,7 @@ public class commond {
 					newTaskCont += taskArray[i]+"#";
 				}
 			}
-	    	newTaskCont = "";
+	    	newTaskCont = DeviceName+",0,0&0&0#";
     	}
     	if(string.equals("add")){
     		newTaskCont += string2;
@@ -269,6 +281,18 @@ public class commond {
     	}
     	
     	if (D)Log.e(TAG, "size:"+instruction.size());
+
+		if(Online.flagTN != 0) {
+			if(commond.instruction.size()!=0){commond.instruction.clear();}
+			if(Online.flagTN == 1) commond.writeOs(commond.ZLDJ);
+			else if(Online.flagTN == 2) commond.writeOs(commond.ZLFW);
+			else if(Online.flagTN == 3) commond.writeOs(commond.FWDJ);
+			else if(Online.flagTN == 4) commond.writeOs(commond.FWFW);
+			else if(Online.flagTN == 5) commond.writeOs(commond.REPCOM);
+			else if(Online.flagTN == 6) commond.writeOs(commond.CHKHZ);
+			Online.flagTN = 0;
+		}
+
     	if(instruction.size()!=0){
     		/*
     		if(instruction.isEmpty()){
@@ -280,7 +304,8 @@ public class commond {
     			}
     		}
     		*/
-        	String message = instruction.get(0);
+
+			String message = instruction.get(0);
 	    	byte[] bos = message.getBytes();
 	    	byte[] bos_new = new byte[bos.length+2];
 	    	int n=0;
@@ -305,6 +330,8 @@ public class commond {
 				os = main._socket.getOutputStream();
 				os.write(bos_new);
 				if (D)Log.e(TAG, instruction.get(0)+":发送成功");
+
+				//commond.instruction.remove(0);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				//logs.setLogs("写入指令失败，断开连接");
@@ -344,7 +371,8 @@ public class commond {
 		String MarkDepthN = "100";
 
 		r = deviceName + "," + 
-				commond.NPInterval + "," +
+//				commond.NPInterval + "," +
+				Mark.recordCount + ","+
 				commond.NPName + "&" +
 				MarkTimeN +"&"+
 				MarkDepthN + "#";
@@ -418,15 +446,15 @@ public class commond {
     
     public static void setConfigValue(String[] args) throws Exception {  
         ql = buildT(Question.class, args);  
-        //System.err.println();
-        //Log.e("TAG", "!!!!!!"+ql.get(0).getThreshold());
-        //THRESHOLD = ql.get(0).getThreshold();
-        //MVD  = ql.get(0).getMvd();
-        //MVV  = ql.get(0).getMvv();
-        //GVD  = ql.get(0).getGvd();
-        //GVV  = ql.get(0).getGvv();
-        //MDD  = ql.get(0).getMdd();
-        //MDV  = ql.get(0).getMdv();
+//        System.err.println();
+//        Log.e("TAG", "!!!!!!"+ql.get(0).getThreshold());
+//        THRESHOLD = ql.get(0).getThreshold();
+//        MVD  = ql.get(0).getMvd();
+//        MVV  = ql.get(0).getMvv();
+//        GVD  = ql.get(0).getGvd();
+//        GVV  = ql.get(0).getGvv();
+//        MDD  = ql.get(0).getMdd();
+//        MDV  = ql.get(0).getMdv();
     }  
       
     public static String celiang(String delaytime,String intervaltime,String latitude){
@@ -437,7 +465,7 @@ public class commond {
     }
     
     public static String caxun(int time){
-    	String re = "$CAXUN,"+"00"+"*  ";
+    	String re = "$CAXUN,"+time+"*  ";
     	if(D)Log.e(TAG, re);
 		return re;
     }

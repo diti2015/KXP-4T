@@ -40,6 +40,7 @@ public class Mark extends Activity {
 	
 	private static TextView markCountDown;
 	private static TextView markCount;
+	private static TextView markStatus;
 //	private Switch markdirection;
 	private LinearLayout markend;
 	//private static EditText intervalDepth;
@@ -56,11 +57,11 @@ public class Mark extends Activity {
 //	private static int intervalDepthCount;
 //	private static boolean isUpDown = true;//true上false下
 	private static boolean initTime = true;
-//	public static String MarkId ="序号#";
-//	public static String MarkTime ="记录时间#";
-//	public static String MarkDepth ="深度#";
-//	public static String MarkOrientation ="方位#";
-//	public static String MarkDip ="倾角#";
+	public static String MarkId ="序号#";
+	public static String MarkTime ="记录时间#";
+	public static String MarkDepth ="深度#";
+	public static String MarkOrientation ="方位#";
+	public static String MarkDip ="倾角#";
 	private static String lastDepthValue = "0";
 	private static int MarkLen = 0;
 	private static int NPInterval = 0;
@@ -99,6 +100,7 @@ public class Mark extends Activity {
 
 		markCountDown = (TextView) findViewById(R.id.markCountDown);
 		markCount = (TextView) findViewById(R.id.markCount);
+		markStatus = (TextView) findViewById(R.id.textViewMakrStatus);
 //		markdirection = (Switch) findViewById(R.id.markdirection);
 		markend = (LinearLayout) findViewById(R.id.markend);
 //		markretest = (LinearLayout) findViewById(R.id.markretest);
@@ -109,8 +111,10 @@ public class Mark extends Activity {
 
 		recordCount = 0;
 		recordTime = NPTime;
-		markCountDown.setText(""+NPTime);
+		markCountDown.setText(""+NPTime/60+"分钟" + NPTime%60 + "秒");
+		markStatus.setText(R.string.MarkStatusEnd);
 		markCount.setText(""+recordCount);
+
 //		nextCount = NPDTime;
 
 //		logss = (ImageView)findViewById(R.id.logs);
@@ -214,7 +218,7 @@ public class Mark extends Activity {
 									
 									
 									commond.setToast(getApplication().getString(R.string.dilog_mark_not_download));
-									int c =  Integer.parseInt(tt.toString())/NPInterval;
+	//								int c =  Integer.parseInt(tt.toString())/NPInterval;
 	//								if(commond.D)Log.e(TAG, "查询："+commond.caxun(c));
 	//								commond.writeOs(commond.caxun(c));
 
@@ -252,10 +256,12 @@ public class Mark extends Activity {
 			Resources resources = markActivity.getResources();
 			if(NPTime > 180) {
 				Drawable btnDrawable = resources.getDrawable(R.drawable.blue_mark_button);
+				markStatus.setText(R.string.MarkStatusEnd);
 				mark.setBackground(btnDrawable);
 			}
 			else if(NPTime == 180) {
 				Drawable btnDrawable = resources.getDrawable(R.drawable.yellow_mark_button);
+				markStatus.setText(R.string.MarkStatusReady);
 				mark.setBackground(btnDrawable);
 			}
 
@@ -362,92 +368,92 @@ public class Mark extends Activity {
 //    }
     
     
-	private static void setTime(boolean isAdd){
-		//判断记录点是否允许记录
-		if(!reallyMark&&isAdd){
-			commond.setToast(markActivity.getString(R.string.dilog_mark_already));
-			return;
-		}
-		if(initTime){
-			commond.setToast(markActivity.getString(R.string.logs_nodevice));
-			return;
-		}
-		
-		if(isAdd){
-			reallyMark = false;
-			int retime = loopCount * NPInterval;
-//			MarkId += ((recordCount+1)+"#");
-//			MarkTime += (retime+"#");
-//			MarkDepth += (markdepth.getText()+"#");
-			lastDepthValue = ""+markCount.getText();
-		}
-		else {
-//			if(commond.D)Log.e(TAG, MarkId);
-//			if(recordCount>1){
-//				MarkId = MarkId.substring(0, MarkId.lastIndexOf("#"));
-//				MarkId = MarkId.substring(0, MarkId.lastIndexOf("#")+1);
-//				MarkTime = MarkTime.substring(0, MarkTime.lastIndexOf("#"));
-//				MarkTime = MarkTime.substring(0, MarkTime.lastIndexOf("#")+1);
-//				MarkDepth = MarkDepth.substring(0, MarkDepth.lastIndexOf("#"));
-//				MarkDepth = MarkDepth.substring(0, MarkDepth.lastIndexOf("#")+1);
-//				if(commond.D)Log.e(TAG, MarkId);
-//			}
-//			else if(recordCount==1) {
-//				MarkId ="序号#";
-//				MarkTime ="记录时间#";
-//				MarkDepth ="深度#";
-//			}
-//			else {
-//				commond.setToast(markActivity.getString(R.string.dilog_mark_nomark));
-//				return;
-//			}
-		}
-		
-//		String[] id = MarkId.split("#");
-//		String[] time = MarkTime.split("#");
-//		String[] depth = MarkDepth.split("#");
-		
-		
-		List<Map<String,Object>> listItems =
-				new ArrayList<Map<String, Object>>();
-		
-//		int listItemsLen =  id.length;
-//		if(!isAdd){
-//			if(listItemsLen==0){
-//				marklist.removeAllViewsInLayout();
-//			}
-//			else if(listItemsLen<0){
-//				return;
-//			}
+//	private static void setTime(boolean isAdd){
+//		//判断记录点是否允许记录
+//		if(!reallyMark&&isAdd){
+//			commond.setToast(markActivity.getString(R.string.dilog_mark_already));
+//			return;
 //		}
-//		for(int i=0;i<listItemsLen;i++){
-//			Map<String,Object> listItem = new HashMap<String,Object>();
-//			listItem.put("markId",id[i]);
-//			listItem.put("markTime",time[i]);
-//			listItem.put("markDepth",depth[i]);
-//			listItems.add(listItem);
-//			if(i==listItemsLen-1&&!isAdd){
-//				lastDepthValue = depth[i];
-//			}
+//		if(initTime){
+//			commond.setToast(markActivity.getString(R.string.logs_nodevice));
+//			return;
 //		}
-		SimpleAdapter adapter1 = new SimpleAdapter(markActivity, listItems, R.layout.array_item,
-				new String[] {"markId","markTime","markDepth"}, 
-				new int[]{R.id.markItemId,R.id.markItemTime,R.id.markItemDepth});
-		
-		marklist.setAdapter(adapter1);
-		marklist.setSelection(marklist.getAdapter().getCount()-1); 
-		
-		if(isAdd){
-			recordCount++;
-			isReset = false;
-	//		markdepth.setText(""+setDepth());
-		}
-		else {
-			recordCount--;
-			reallyMark=true;
-		}
-	}
-	
+//
+//		if(isAdd){
+//			reallyMark = false;
+//			int retime = loopCount * NPInterval;
+////			MarkId += ((recordCount+1)+"#");
+////			MarkTime += (retime+"#");
+////			MarkDepth += (markdepth.getText()+"#");
+//			lastDepthValue = ""+markCount.getText();
+//		}
+//		else {
+////			if(commond.D)Log.e(TAG, MarkId);
+////			if(recordCount>1){
+////				MarkId = MarkId.substring(0, MarkId.lastIndexOf("#"));
+////				MarkId = MarkId.substring(0, MarkId.lastIndexOf("#")+1);
+////				MarkTime = MarkTime.substring(0, MarkTime.lastIndexOf("#"));
+////				MarkTime = MarkTime.substring(0, MarkTime.lastIndexOf("#")+1);
+////				MarkDepth = MarkDepth.substring(0, MarkDepth.lastIndexOf("#"));
+////				MarkDepth = MarkDepth.substring(0, MarkDepth.lastIndexOf("#")+1);
+////				if(commond.D)Log.e(TAG, MarkId);
+////			}
+////			else if(recordCount==1) {
+////				MarkId ="序号#";
+////				MarkTime ="记录时间#";
+////				MarkDepth ="深度#";
+////			}
+////			else {
+////				commond.setToast(markActivity.getString(R.string.dilog_mark_nomark));
+////				return;
+////			}
+//		}
+//
+////		String[] id = MarkId.split("#");
+////		String[] time = MarkTime.split("#");
+////		String[] depth = MarkDepth.split("#");
+//
+//
+//		List<Map<String,Object>> listItems =
+//				new ArrayList<Map<String, Object>>();
+//
+////		int listItemsLen =  id.length;
+////		if(!isAdd){
+////			if(listItemsLen==0){
+////				marklist.removeAllViewsInLayout();
+////			}
+////			else if(listItemsLen<0){
+////				return;
+////			}
+////		}
+////		for(int i=0;i<listItemsLen;i++){
+////			Map<String,Object> listItem = new HashMap<String,Object>();
+////			listItem.put("markId",id[i]);
+////			listItem.put("markTime",time[i]);
+////			listItem.put("markDepth",depth[i]);
+////			listItems.add(listItem);
+////			if(i==listItemsLen-1&&!isAdd){
+////				lastDepthValue = depth[i];
+////			}
+////		}
+//		SimpleAdapter adapter1 = new SimpleAdapter(markActivity, listItems, R.layout.array_item,
+//				new String[] {"markId","markTime","markDepth"},
+//				new int[]{R.id.markItemId,R.id.markItemTime,R.id.markItemDepth});
+//
+//		marklist.setAdapter(adapter1);
+//		marklist.setSelection(marklist.getAdapter().getCount()-1);
+//
+//		if(isAdd){
+//			recordCount++;
+//			isReset = false;
+//	//		markdepth.setText(""+setDepth());
+//		}
+//		else {
+//			recordCount--;
+//			reallyMark=true;
+//		}
+//	}
+//
 	public static void initStatic(){
 		commond.instruction.clear();//清除队列
 		markActivity = null;
@@ -459,11 +465,11 @@ public class Mark extends Activity {
 	//	intervalDepthCount = 0;
 	//	isUpDown = true;//true上，false下
 		initTime = true;
-//		MarkId ="序号#";
-//		MarkTime ="记录时间#";
-//		MarkDepth ="深度#";
-//		MarkOrientation ="方位#";
-//		MarkDip ="倾角#";
+		MarkId ="序号#";
+		MarkTime ="记录时间#";
+		MarkDepth ="深度#";
+		MarkOrientation ="方位#";
+		MarkDip ="倾角#";
 		MarkLen = 0;
 		reallyMark = true;
 		loopCount = 1;
@@ -526,30 +532,35 @@ public class Mark extends Activity {
 			if(recordTime == 180){
 				Resources resources = markActivity.getResources();
 				Drawable btnDrawable = resources.getDrawable(R.drawable.yellow_mark_button);
+				markStatus.setText(R.string.MarkStatusReady);
 				mark.setBackground(btnDrawable);
 			}
 
 			if(recordTime == 120){
 				Resources resources = markActivity.getResources();
 				Drawable btnDrawable = resources.getDrawable(R.drawable.red_mark_button);
+				markStatus.setText(R.string.MarkStatusIng);
 				mark.setBackground(btnDrawable);
 			}
 
 			if(recordTime == 0){
 				recordCount++;
-				recordTime = NPInterval;
+					recordTime = NPInterval;
 				Resources resources = markActivity.getResources();
 				if(NPTime > 180) {
 					Drawable btnDrawable = resources.getDrawable(R.drawable.blue_mark_button);
+					markStatus.setText(R.string.MarkStatusEnd);
 					mark.setBackground(btnDrawable);
 				}
 				else if(NPTime == 180) {
 					Drawable btnDrawable = resources.getDrawable(R.drawable.yellow_mark_button);
+					markStatus.setText(R.string.MarkStatusReady);
 					mark.setBackground(btnDrawable);
 				}
 			}
 
-			markCountDown.setText(""+recordTime);
+		//	markCountDown.setText(""+recordTime);
+			markCountDown.setText(""+recordTime/60+"分钟" + recordTime%60 + "秒");
 			markCount.setText(""+recordCount);
 
 	        handler.postDelayed(this, 1000);
@@ -624,93 +635,108 @@ public class Mark extends Activity {
 	
 	public static class Receiver extends BroadcastReceiver {  
         @Override  
-        public void onReceive(Context context, Intent intent) {  
-        	String content=intent.getStringExtra("readMessage"); 
-        	String[] info = commond.returnInfo(content);
+        public void onReceive(Context context, Intent intent) {
+			String content=intent.getStringExtra("readMessage");
+			String[] info = commond.returnInfo(content);
 
-        	if(info[0].equals("HHZ")){
-        		commond.retryNum = 0;//重置重复次数
-        		commond.stopKeepService();
-        		commond.reallyTimer = false;
-        		
-//        		MarkOrientation +=  info[2] +"#";
-//        		MarkDip += info[1] +"#";
-//
-        		if(commond.lastCount!=0){
-        			commond.lastRecCount++;
-//
- 				}
-        		
-//        		int MarkOrientationLen = MarkOrientation.split("#").length;
-//        		int MarkIdLen = MarkId.split("#").length;
-//
-//        		if(commond.D)Log.e(TAG, "MarkOrientationLen:"+MarkOrientationLen+"|MarkIdLen:"+MarkIdLen+"|lastCount需要加1:"+commond.lastCount);
-//        		if(MarkOrientationLen==MarkIdLen||MarkOrientationLen==commond.lastCount+1&&commond.lastCount!=0){
-//        			Progress.setProgressBar(100);
-//        			String[] MarkTimeArray = MarkTime.split("#");
-//        			String[] MarkDepthArray = MarkDepth.split("#");
-//        			String[] MarkOrientationArray = MarkOrientation.split("#");
-//        			String[] MarkDipArray = MarkDip.split("#");
-//        			//写入文件
-//        			String res ="";
-//        			if(MarkIdLen==1) MarkIdLen = commond.lastCount+1;
-//
-//        			for(int a=1;a<MarkIdLen;a++){
-//        				res += MarkTimeArray[a]+"#";
-//        				res += MarkDepthArray[a]+"#";
-//        				res += MarkDipArray[a]+"#";
-//        				res += MarkOrientationArray[a]+"#";
-//        			}
-//        			if(commond.D)Log.e(TAG,"res:"+res);
-//        			try {
-//						RWfile.saveToSDCard(commond.NPName+".txt", res);
-//					} catch (Exception e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//
-//        			//
-//        			commond.doTask("del", "");
-//        			commond.lastCount = 0;
-//
-//        			//下一个界面
-//
-//        			new Timer().schedule(new TimerTask() {
-//    					@Override
-//    					public void run() {
-//    						// TODO Auto-generated method stub
-//    						Progress.progressActivity.finish();
-//    						if(markActivity!=null)Mark.markActivity.onDestroy();
-//    					}
-//    				}, 1000);
-//        			return;
-//        		}
-//        		else {
-//
-//        			if(recordCount==0) recordCount = commond.lastCount;
-//        			if(commond.D)Log.e(TAG, "0:"+recordCount);
-//        			double price =  100 / Double.parseDouble(""+recordCount);
-//        			if(commond.D)Log.e(TAG, "1:"+price);
-//        			int num = MarkOrientationLen-1;
-//        			if(commond.D)Log.e(TAG, "2:"+num);
-//        			double progressStats = price * num;
-//        			if(commond.D)Log.e(TAG, "3:"+progressStats);
-//        			int progressStatsVal = Integer.valueOf((int) Math.round( progressStats));
-//        			if(commond.D)Log.e(TAG, "进度条："+progressStatsVal);
-//        			if(progressStatsVal==-1){
-//        				initStatic();
-//        				return;
-//        			}
-//        			Progress.setProgressBar(progressStatsVal);
-//
-//        			if(commond.D)Log.e(TAG, "keep3");
-//        			commond.startKeepService();
-//        		}
-        		
-        		commond.writeOsNext();
-        	}
-        	
-        }  
+
+
+			if(info[0].equals("HWC")){
+				commond.retryNum = 0;//重置重复次数
+				commond.stopKeepService();
+				commond.reallyTimer = false;
+
+//				MarkOrientation +=  info[2] +"#";
+//				MarkDip += info[1] +"#";
+				MarkOrientation +=  info[3] +"#";
+				MarkDip += info[2] +"#";
+
+				if(commond.lastCount!=0){
+					commond.lastRecCount++;
+			//		MarkTime += (Integer.parseInt(commond.NPInterval)*commond.lastRecCount) + "#";
+			//		MarkDepth += commond.taskDepthArray[commond.lastRecCount-1] + "#";
+					MarkTime += "0" + "#";
+					MarkDepth += "0" + "#";
+				}
+
+				int MarkOrientationLen = MarkOrientation.split("#").length;
+				//int MarkIdLen = MarkId.split("#").length;
+				int MarkIdLen = Integer.parseInt(info[1]);
+		//		if(MarkIdLen == 0) {
+		//			MarkOrientation =  info[3] +"#";
+		//			MarkDip = info[2] +"#";
+		//		}
+
+				if(commond.D)Log.e(TAG, "MarkOrientationLen:"+MarkOrientationLen+"|MarkIdLen:"+MarkIdLen+"|lastCount需要加1:"+commond.lastCount);
+				//if(MarkOrientationLen==MarkIdLen||MarkOrientationLen==commond.lastCount+1&&commond.lastCount!=0){
+				if(MarkOrientationLen==commond.lastCount+1&&commond.lastCount!=0){
+					Progress.setProgressBar(100);
+					String[] MarkTimeArray = MarkTime.split("#");
+					String[] MarkDepthArray = MarkDepth.split("#");
+					String[] MarkOrientationArray = MarkOrientation.split("#");
+					String[] MarkDipArray = MarkDip.split("#");
+					//写入文件
+					String res ="";
+					//if(MarkIdLen==1) MarkIdLen = commond.lastCount+1;
+					MarkIdLen = commond.lastCount+1;
+
+					for(int a=1;a<MarkIdLen;a++){
+						res += MarkTimeArray[a]+"#";
+						res += MarkDepthArray[a]+"#";
+						res += MarkDipArray[a]+"#";
+						res += MarkOrientationArray[a]+"#";
+					}
+					if(commond.D)Log.e(TAG,"res:"+res);
+					try {
+						RWfile.saveToSDCard(commond.NPName+".txt", res);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					//
+					//diti
+					commond.doTask("del", "");
+					commond.lastCount = 0;
+
+					//下一个界面
+
+					new Timer().schedule(new TimerTask() {
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							Progress.progressActivity.finish();
+							if(markActivity!=null)Mark.markActivity.onDestroy();
+						}
+					}, 1000);
+					return;
+				}
+				else {
+
+					if(recordCount==0) recordCount = commond.lastCount;
+					if(commond.D)Log.e(TAG, "0:"+recordCount);
+					double price =  100 / Double.parseDouble(""+recordCount);
+					if(commond.D)Log.e(TAG, "1:"+price);
+					int num = MarkOrientationLen-1;
+					if(commond.D)Log.e(TAG, "2:"+num);
+					double progressStats = price * num;
+					if(commond.D)Log.e(TAG, "3:"+progressStats);
+					int progressStatsVal = Integer.valueOf((int) Math.round( progressStats));
+					if(commond.D)Log.e(TAG, "进度条："+progressStatsVal);
+					if(progressStatsVal==-1){
+						initStatic();
+						return;
+					}
+					Progress.setProgressBar(progressStatsVal);
+
+					if(commond.D)Log.e(TAG, "keep3");
+					commond.startKeepService();
+				}
+
+				commond.writeOsNext();
+			}
+
+		}
 	}
 	
 	

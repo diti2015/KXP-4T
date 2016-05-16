@@ -207,7 +207,9 @@ public class DeviceListActivityAuto extends Activity
 				//{
 				if (commond.D)Log.d(TAG, device.getName() + '|' + device.getAddress());
 					if(!(device.getName()==null)){
-						if(device.getName().length()>4&&device.getName().substring(0,3).equals("430")){
+						String abc = device.getName().substring(0,6);
+						int ii = device.getName().length();
+						if(device.getName().length()>4&&device.getName().substring(0,6).equals(commond.DeviceName)){
 							mBtAdapter.cancelDiscovery();
 						}
 					}
@@ -227,7 +229,7 @@ public class DeviceListActivityAuto extends Activity
 				int matchNum = 0;
 				int matchIndex = 0;
 				for(int i=0;i<mNewDevicesArrayAdapter.size();i++){
-					if(mNewDevicesArrayAdapter.get(i).substring(0,3).equals("430")){
+					if(mNewDevicesArrayAdapter.get(i).substring(0,6).equals(commond.DeviceName)){
 						matchNum++;
 						matchIndex=i;
 					}
