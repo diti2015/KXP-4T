@@ -547,12 +547,12 @@ public class Mark extends Activity {
 				recordCount++;
 					recordTime = NPInterval;
 				Resources resources = markActivity.getResources();
-				if(NPTime > 180) {
+				if(recordTime > 180) {
 					Drawable btnDrawable = resources.getDrawable(R.drawable.blue_mark_button);
 					markStatus.setText(R.string.MarkStatusEnd);
 					mark.setBackground(btnDrawable);
 				}
-				else if(NPTime == 180) {
+				else if(recordTime == 180) {
 					Drawable btnDrawable = resources.getDrawable(R.drawable.yellow_mark_button);
 					markStatus.setText(R.string.MarkStatusReady);
 					mark.setBackground(btnDrawable);

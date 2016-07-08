@@ -88,12 +88,12 @@
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/blue_mark_down.png"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/blue_mark_button.xml",
-        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/blue_mark_button.xml"
-    },
-    {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/yellow_up.png",
         "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/yellow_up.png"
+    },
+    {
+        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/blue_mark_button.xml",
+        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable/blue_mark_button.xml"
     },
     {
         "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable/main_bg.png",

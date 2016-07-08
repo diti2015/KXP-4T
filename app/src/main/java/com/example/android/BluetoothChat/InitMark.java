@@ -111,7 +111,7 @@ public class InitMark extends Activity {
 
 	//	mLocationListener = new LocationListener();
 
-		initLatitude.setText("31.25");
+		initLatitude.setText("");
 		mgr = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		List<String> providerList = mgr.getProviders(true);
 		if(providerList.contains(LocationManager.GPS_PROVIDER)){

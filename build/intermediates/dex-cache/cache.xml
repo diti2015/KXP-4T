@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.1"
-        sha1="7eb1fa9bbd399e8b4057d2da23272df4906ff707">
-        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0bf2fa17d702ac81d62988d168efc73724c74e15/classes.dex" />
-    </item>
-    <item
-        jar="/home/diti/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
-        jumboMode="true"
-        revision="23.0.1"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_0738125bcb319a6ea0ffdec2c08213ebcf05b174/classes.dex" />
-    </item>
-    <item
         jar="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.1"
-        sha1="f3d856c25158fdec2d0c8631511a4c8bc64b5df6">
-        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1484ed52b2beab37c1e5590668b3c40b75f10bb3/classes.dex" />
+        sha1="29f4e2eb8e7fa1c00cc52c6bbfd306b174a0f036">
+        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_1484ed52b2beab37c1e5590668b3c40b75f10bb3.jar" />
     </item>
     <item
         jar="/home/diti/AndroidStudioProjects/KXP-4T/app/jxl.jar"
         jumboMode="true"
         revision="23.0.1"
         sha1="955fa72ef2e3d5a45db59d84802401f75bc973a5">
-        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/transforms/dex/debug/folders/1000/2/jxl_5ebad4ef6b72223f0f5bbe3a91c0529419c315ec/classes.dex" />
+        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/pre-dexed/debug/jxl_5ebad4ef6b72223f0f5bbe3a91c0529419c315ec.jar" />
+    </item>
+    <item
+        jar="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="cb1bcae0f4cce04964d80b66bc16856cb6e07b87">
+        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/pre-dexed/debug/instant-run_0bf2fa17d702ac81d62988d168efc73724c74e15.jar" />
+    </item>
+    <item
+        jar="/home/diti/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="23.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0_0738125bcb319a6ea0ffdec2c08213ebcf05b174.jar" />
     </item>
 
 </items>
