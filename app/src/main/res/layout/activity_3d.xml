@@ -81,13 +81,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/mapEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/top_view_en"
-                android:textColor="#000"
-                android:textSize="25sp" />
         </LinearLayout>
         
        <LinearLayout
@@ -107,14 +100,7 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/settingEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vertical_view_en"
-                android:textColor="#000"
-                android:textSize="25sp" />
-        </LinearLayout>
+       </LinearLayout>
         <LinearLayout
             android:id="@+id/button3"
             android:layout_width="0dp"
@@ -132,13 +118,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/exportEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/left_view_en"
-                android:textColor="#000"
-                android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
     <!-- 

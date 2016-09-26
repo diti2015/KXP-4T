@@ -29,14 +29,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/celiangEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/celiangen"
-                android:textColor="#000"
-                android:textSize="25sp" />
-            
         </LinearLayout>
 
         <LinearLayout
@@ -56,13 +48,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/chayueEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chayueen"
-                android:textColor="#000"
-                android:textSize="25sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -82,13 +67,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/settingEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/settingen"
-                android:textColor="#000"
-                android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -193,7 +171,7 @@
         android:id="@+id/connection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="目标设备："
+        android:text="@string/DeviceName"
         android:textSize="20sp"
         android:layout_alignBaseline="@+id/changeDevice"
         android:layout_alignBottom="@+id/changeDevice"

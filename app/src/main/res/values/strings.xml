@@ -26,7 +26,7 @@
     <string name="not_connected">you are not connected to a device</string>
     <string name="bt_not_enabled_leaving">蓝牙开启失败，请允许开启蓝牙后，再重试。</string>
     <string name="title_connecting">正在连接。。。</string>
-    <string name="title_connected_to"></string>
+    <string name="title_connected_to" translatable="false"></string>
     <string name="title_not_connected">未连接</string>
 
     <!-- devicelistactivity -->
@@ -40,7 +40,7 @@
     <string name="searchnow">请稍后...</string>
 
     <!-- options menu -->
-    <string name="connect">connect a device</string>
+    <string name="connect">连接设备</string>
     <string name="autocontdevice">正在智能识别设备，请稍后</string>
 
     <!-- main -->
@@ -180,8 +180,7 @@
 	<string name="dilog_markend_not_ok">mark记录还没有结束，请稍后再试</string>
 	<string name="dilog_initmark_noProjectName">项目名称不能为空</string>
 	<string name="dilog_initmark_noDelyTimer">延迟启动不能为空</string>
-	<string name="dilog_initmark_noDepth">初始深度不能为空</string>
-	
+
 	<!-- mark -->
 	<string name="celiang_menu_title">测量</string>
 	<string name="mark_end">结束</string>
@@ -212,5 +211,9 @@
 	<string name="second">　秒</string>
 	<string name="meter">　米</string>
 	<string name="initmark_interval">时间间隔：</string>
-	
+	<string name="CheckDeivce">正在查找设备</string>
+	<string name="DeviceName">目标设备：</string>
+	<string name="dilog_initmark_noDepth">初始深度不能为空</string>
+	<string name="project_name">项目：</string>
+
 </resources>

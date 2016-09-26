@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/drawable-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     }
 ]

@@ -226,14 +226,6 @@
                 android:textColor="#fff"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/initStartEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/online_en"
-                android:textColor="#fff"
-                android:textSize="30sp" />
-            
-        </LinearLayout>
+  </LinearLayout>
 
 </RelativeLayout>

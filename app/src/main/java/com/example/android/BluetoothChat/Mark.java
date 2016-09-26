@@ -48,7 +48,7 @@ import android.widget.Toast;
 
 public class Mark extends Activity {
 	private static final String TAG = "mark";
-	
+
 	private static TextView markCountDown;
 	private static TextView markdepth;
 	private Switch markdirection;
@@ -67,12 +67,12 @@ public class Mark extends Activity {
 	private static int intervalDepthCount;
 	private static boolean isUpDown = true;//true上false下
 	private static boolean initTime = true;
-	public static String MarkId ="序号#";
-	public static String MarkTime ="记录时间#";
-	public static String MarkDepth ="深度#";
-	public static String MarkOrientation ="方位#";
-	public static String MarkDip ="倾角#";
-	private static String lastDepthValue = "0";
+	public static String MarkId ; //="序号#";
+	public static String MarkTime; //="记录时间#";
+	public static String MarkDepth; //="深度#";
+	public static String MarkOrientation; // ="方位#";
+	public static String MarkDip; // ="倾角#";
+	private static String lastDepthValue; // = "0";
 	private static int MarkLen = 0;
 	private static int NPInterval = 0;
 	private int NPDTime = 0;//分钟转换秒
@@ -452,11 +452,18 @@ public class Mark extends Activity {
 		intervalDepthCount = 0;
 		isUpDown = true;//true上，false下
 		initTime = true;
-		MarkId ="序号#";
+
+//		MarkId =markActivity.getString(R.string.MarkId);
+//		MarkTime = markActivity.getString(R.string.MarkTime);
+//		MarkDepth = markActivity.getString(R.string.MarkDepth);
+//		MarkOrientation = markActivity.getString(R.string.MarkOrientation);
+//		MarkDip = markActivity.getString(R.string.MarkDip);
+		MarkId = "序号#";
 		MarkTime ="记录时间#";
 		MarkDepth ="深度#";
 		MarkOrientation ="方位#";
 		MarkDip ="倾角#";
+
 		MarkLen = 0;
 		reallyMark = true;
 		loopCount = 1;
