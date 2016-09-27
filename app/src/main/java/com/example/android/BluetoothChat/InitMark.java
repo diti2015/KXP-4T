@@ -69,7 +69,7 @@ public class InitMark extends Activity {
 		initStart = (LinearLayout) findViewById(R.id.initStart);
 		initIntervalUp = (ImageButton) findViewById(R.id.initIntervalUp);
 		initIntervalDown = (ImageButton) findViewById(R.id.initIntervalDown);
-		logbtn= (ImageView)findViewById(R.id.logs);
+		//logbtn= (ImageView)findViewById(R.id.logs);
 		
 		//commond.devicelamp = devicelamp;
 		
@@ -101,14 +101,14 @@ public class InitMark extends Activity {
 			
 		});
 		
-		logbtn.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(InitMark.this,logs.class) ;
-				startActivity(intent);
-			}
-			
-		});
+	//	logbtn.setOnClickListener(new OnClickListener(){
+	//		@Override
+	//		public void onClick(View v) {
+				//Intent intent = new Intent(InitMark.this,logs.class) ;
+	//			startActivity(intent);
+	//		}
+	//
+	//	});
 		
 		
 		initStart.setOnClickListener(new OnClickListener(){
@@ -134,7 +134,7 @@ public class InitMark extends Activity {
 				if(commond.D)Log.e(TAG, "_socket:"+main._socket+"|isConntected:"+commond.isConntected);
 				if(main._socket==null||!commond.isConntected){
 					commond.setToast(getApplication().getString(R.string.noconnted));
-					//Toast.makeText(getApplicationContext(), "Éè±¸»¹Î´Á¬½Ó£¬ÇëÏÈÁ¬½ÓÉè±¸£¡", Toast.LENGTH_SHORT).show();
+					//Toast.makeText(getApplicationContext(), "è®¾å¤‡è¿˜æœªè¿æ¥ï¼Œè¯·å…ˆè¿æ¥è®¾å¤‡ï¼", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				
@@ -151,7 +151,7 @@ public class InitMark extends Activity {
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
-									commond.lastCount = 0;//Çå³ıÉÏ´Î¼ÇÂ¼
+									commond.lastCount = 0;//æ¸…é™¤ä¸Šæ¬¡è®°å½•
 									commond.doTask("del", "");
 									Mark.initStatic();
 									startMarkActivity();
@@ -163,7 +163,7 @@ public class InitMark extends Activity {
 
 								public void onClick(DialogInterface dialog,
 										int whichButton) {
-									//Ğ´Èë¶ÓÁĞ
+									//å†™å…¥é˜Ÿåˆ—
 									
 				    				for(int a=0;a<commond.taskIIArray.length;a++){
 				    					if(commond.D)Log.e(TAG, "f:"+commond.taskIIArray[a]);
@@ -246,8 +246,8 @@ public class InitMark extends Activity {
         	String content=intent.getStringExtra("readMessage"); 
         	String[] info = commond.returnInfo(content);
         	if(info[0].equals("CLOK")){
-        		commond.retryNum = 0;//ÖØÖÃÖØ¸´´ÎÊı
-        		if(commond.D)Log.e(TAG, "¼ÆÊ±Æ÷¿ªÆô");
+        		commond.retryNum = 0;//é‡ç½®é‡å¤æ¬¡æ•°
+        		if(commond.D)Log.e(TAG, "è®¡æ—¶å™¨å¼€å¯");
         		if(Mark.markActivity==null){
 	        		alertActive.cancel();
 	        		Mark.initStatic();

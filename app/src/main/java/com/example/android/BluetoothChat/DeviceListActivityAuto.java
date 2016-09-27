@@ -108,7 +108,7 @@ public class DeviceListActivityAuto extends Activity
 		}
 		else
 		{
-			//没有找到设备
+			//娌℃湁鎵惧埌璁惧
 		}
 	}
 	
@@ -249,7 +249,7 @@ public class DeviceListActivityAuto extends Activity
 				}
 				else {
 					commond.setToast(getApplication().getString(R.string.device_autosearchfailed));
-					//Toast.makeText(commond.activeContext, "没有匹配到合适的设备", Toast.LENGTH_LONG).show();
+					//Toast.makeText(commond.activeContext, "娌℃湁鍖归厤鍒板悎閫傜殑璁惧", Toast.LENGTH_LONG).show();
 					commond.closeSocket();
 					Manual();
 					finish();

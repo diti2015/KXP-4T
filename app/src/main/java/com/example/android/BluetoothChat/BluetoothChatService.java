@@ -57,8 +57,8 @@ public class BluetoothChatService {
     private ConnectedThread mConnectedThread;
     private int mState;
 
-    private String smsg = "";    //ÏÔÊ¾ÓÃÊı¾İ»º´æ
-    private String fmsg = "";    //±£´æÓÃÊı¾İ»º´æ
+    private String smsg = "";    //æ˜¾ç¤ºç”¨æ•°æ®ç¼“å­˜
+    private String fmsg = "";    //ä¿å­˜ç”¨æ•°æ®ç¼“å­˜
     boolean bRun = true;
     
     // Constants that indicate the current connection state

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.android.BluetoothChat.InitMark;
-import com.example.android.BluetoothChat.logs;
+//import com.example.android.BluetoothChat.logs;
 import com.example.android.BluetoothChat.main;
 import com.example.android.BluetoothChat.commond;
 import com.liqin.instrument.R;
@@ -112,14 +112,14 @@ public class MainActivity extends Activity {
 		    //commond.devicelamp = devicelamp;
 		    logbtn = (ImageView)findViewById(R.id.logs);
 		    
-		    logbtn.setOnClickListener(new OnClickListener(){
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(MainActivity.this,logs.class) ;
-					startActivity(intent);
-				}
-				
-			});
+//		    logbtn.setOnClickListener(new OnClickListener(){
+//				@Override
+//				public void onClick(View v) {
+//					Intent intent = new Intent(MainActivity.this,logs.class) ;
+//					startActivity(intent);
+//				}
+//
+//			});
 		    
 		    xls.setOnClickListener(new OnClickListener() {
 		    	
@@ -133,24 +133,24 @@ public class MainActivity extends Activity {
 				        try {
                             xls.toxls(fname);
                             commond.setToast( getApplication().getString(R.string.dilog_export_success));
-                           //Toast.makeText(getApplicationContext(), "µ¼³ö³É¹¦", Toast.LENGTH_SHORT).show();
+                           //Toast.makeText(getApplicationContext(), "å¯¼å‡ºæˆåŠŸ", Toast.LENGTH_SHORT).show();
                         } catch (RowsExceededException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                             commond.setToast( getApplication().getString(R.string.dilog_export_fail));
-                            //Toast.makeText(getApplicationContext(), "µ¼³öÊ§°Ü", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), "å¯¼å‡ºå¤±è´¥", Toast.LENGTH_LONG).show();
                             return ;
                         } catch (WriteException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                             commond.setToast( getApplication().getString(R.string.dilog_export_fail));
-                            //Toast.makeText(getApplicationContext(), "µ¼³öÊ§°Ü", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), "å¯¼å‡ºå¤±è´¥", Toast.LENGTH_LONG).show();
                             return ;
                         } catch (IOException e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                             commond.setToast( getApplication().getString(R.string.dilog_export_fail));
-                            //Toast.makeText(getApplicationContext(), "µ¼³öÊ§°Ü", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), "å¯¼å‡ºå¤±è´¥", Toast.LENGTH_LONG).show();
                             return ;
                         }
 				}
@@ -194,7 +194,7 @@ public class MainActivity extends Activity {
 			                	filesize++;
 		                	}
 		                }
-		                //ÅĞ¶ÏÎÄ¼şÊ±.txtµÄ¸öÊı
+		                //åˆ¤æ–­æ–‡ä»¶æ—¶.txtçš„ä¸ªæ•°
 		                if(filesize!=0){
 		                	filename=new String[filesize];
 		                }
@@ -212,15 +212,15 @@ public class MainActivity extends Activity {
 		
 		 spinner = (Spinner) findViewById(R.id.Spinner01);
 		 if(filename!=null){
-		         //½«¿ÉÑ¡ÄÚÈİÓëArrayAdapterÁ¬½ÓÆğÀ´		
+		         //å°†å¯é€‰å†…å®¹ä¸ArrayAdapterè¿æ¥èµ·æ¥		
 		         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,filename);		 		          		 
-		         //ÉèÖÃÏÂÀ­ÁĞ±íµÄ·ç¸ñ		 
+		         //è®¾ç½®ä¸‹æ‹‰åˆ—è¡¨çš„é£æ ¼		 
 		         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);		 		          		 
-		         //½«adapter Ìí¼Óµ½spinnerÖĞ		 
+		         //å°†adapter æ·»åŠ åˆ°spinnerä¸­		 
 		         spinner.setAdapter(adapter);		 		          
-		 		         //Ìí¼ÓÊÂ¼şSpinnerÊÂ¼ş¼àÌı 	 
+		 		         //æ·»åŠ äº‹ä»¶Spinneräº‹ä»¶ç›‘å¬ 	 
 		         spinner.setOnItemSelectedListener(new SpinnerSelectedListener());		          		 
-		         //ÉèÖÃÄ¬ÈÏÖµ		 
+		         //è®¾ç½®é»˜è®¤å€¼		 
 		         spinner.setVisibility(View.VISIBLE);	
 		        
 		         dolist(filename[0]);
@@ -228,7 +228,7 @@ public class MainActivity extends Activity {
 		 }
 		 else{
 			 commond.setToast(  getApplication().getString(R.string.dilog_digtool_empty));
-			 //Toast.makeText(this, "digtoolÖĞÃ»ÓĞÎÄ¼ş", Toast.LENGTH_SHORT).show();
+			 //Toast.makeText(this, "digtoolä¸­æ²¡æœ‰æ–‡ä»¶", Toast.LENGTH_SHORT).show();
 		 }
 		 
 		 //commond.setDeviceType(0);
@@ -244,10 +244,10 @@ class SpinnerSelectedListener implements OnItemSelectedListener{
 
      public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
     	 Message msg = new Message();
-    	              Bundle b = new Bundle();// ´æ·ÅÊı¾İ
+    	              Bundle b = new Bundle();// å­˜æ”¾æ•°æ®
     	              b.putString("name", filename[arg2]);
     	             msg.setData(b);
-    	           handler.sendMessage(msg); // ÏòHandler·¢ËÍÏûÏ¢,¸üĞÂUI
+    	           handler.sendMessage(msg); // å‘Handlerå‘é€æ¶ˆæ¯,æ›´æ–°UI
        
      }
      public void onNothingSelected(AdapterView<?> arg0) {
@@ -300,7 +300,7 @@ public void dolist(String name){
     nf.setMaximumFractionDigits(3);
     final List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
     HashMap<String, Object> m1=new HashMap<String,Object>();
-//    Éî¶È(Ã×)	Çã½Ç(¶È)	·½Î»(¶È)	Æ«ÒÆLx	Æ«ÒÆLy	Éî¶ÈZ	
+//    æ·±åº¦(ç±³)	å€¾è§’(åº¦)	æ–¹ä½(åº¦)	åç§»Lx	åç§»Ly	æ·±åº¦Z	
     
    
     m1.put("tt", this.getString(R.string.serialno));
@@ -312,7 +312,7 @@ public void dolist(String name){
 	m1.put("t5",this.getString(R.string.ly));
 	m1.put("t6", this.getString(R.string.dz));
 	m1.put("t7", this.getString(R.string.pl));
-	 m1.put("t0f", false);//Êı¾İÕı³£ÊÇfalse
+	 m1.put("t0f", false);//æ•°æ®æ­£å¸¸æ˜¯false
      m1.put("t1f", false);
      m1.put("t2f", false);
      m1.put("t3f", false);
@@ -419,15 +419,15 @@ public void dolist(String name){
 }
 
 public void deleteFile(File file) {
-if (file.exists()) { // ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+if (file.exists()) { // åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 
-file.delete(); // delete()·½·¨ ÄãÓ¦¸ÃÖªµÀ ÊÇÉ¾³ıµÄÒâË¼;
+file.delete(); // delete()æ–¹æ³• ä½ åº”è¯¥çŸ¥é“ æ˜¯åˆ é™¤çš„æ„æ€;
 
 
 }
 else
 	commond.setToast(getApplication().getString(R.string.dilog_txt_empty));
-	//Toast.makeText(this, "ÎÄ¼ş²»´æÔÚ", Toast.LENGTH_SHORT).show();
+	//Toast.makeText(this, "æ–‡ä»¶ä¸å­˜åœ¨", Toast.LENGTH_SHORT).show();
 }
 
 protected void dialog() {

@@ -175,14 +175,14 @@ public class main extends Activity
 		    conntedprogress =  (ProgressBar)findViewById(R.id.connectingprogress);
 		    
 		    //commond.devicelamp = devicelamp;
-		    logbtn.setOnClickListener(new OnClickListener(){
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(main.this,logs.class) ;
-					startActivity(intent);
-				}
-				
-			});
+		    //logbtn.setOnClickListener(new OnClickListener(){
+			//	@Override
+			//	public void onClick(View v) {
+			//		Intent intent = new Intent(main.this,logs.class) ;
+			//		startActivity(intent);
+			//	}
+			//
+			//});
 		    
 		    celiang.setOnClickListener(new OnClickListener(){
 				@Override
@@ -256,69 +256,20 @@ public class main extends Activity
         		_bluetooth.enable();
         		Intent serverIntent = new Intent(mainActivity, waitting.class);
         		startActivity(serverIntent);
-        		 logs.setLogs(getApplication().getString(R.string.bluetoothsuccess));
+        	//	 logs.setLogs(getApplication().getString(R.string.bluetoothsuccess));
     		   }
     		   else {
-    			   logs.setLogs(getApplication().getString(R.string.bluetoothisopened));
+    		//	   logs.setLogs(getApplication().getString(R.string.bluetoothisopened));
     			   //commond.closeSocket();
     			   	//自动搜索设备
     				commond.isLastTask = true;
     				Intent serverIntent = new Intent(mainActivity, DeviceListActivityAuto.class);
     				mainActivity.startActivityForResult(serverIntent, 1);
     		   }
-	      
-//	        // 设置设备可以被搜索  
-//	       new Thread(){
-//	    	   public void run(){
-//	    		  
-//	    		   if(_bluetooth.isEnabled()==false){
-//	        		_bluetooth.enable();
-//	        		Intent serverIntent = new Intent(mainActivity, waitting.class);
-//	        		startActivity(serverIntent);
-//	        		 logs.setLogs(getApplication().getString(R.string.bluetoothsuccess));
-//	    		   }
-//	    		   else {
-//	    			   logs.setLogs(getApplication().getString(R.string.bluetoothisopened));
-//	    			   //commond.closeSocket();
-//	    			   	//自动搜索设备
-//	    				commond.isLastTask = true;
-//	    				Intent serverIntent = new Intent(mainActivity, DeviceListActivityAuto.class);
-//	    				mainActivity.startActivityForResult(serverIntent, 1);
-//	    		   }
-//	    	   }   	   
-//	       }.start(); 
 		  
 	       IntentFilter filter = new IntentFilter();
 	       filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED); //bluetooth狀態改變事件
 	       registerReceiver(mReceiver, filter);
-	       
-		   /*
-	        // Get local Bluetooth adapter
-	        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-	        // 蓝牙是否可用
-	        if (mBluetoothAdapter == null) {
-	            Toast.makeText(this, "蓝牙不可用", Toast.LENGTH_LONG).show();
-	            finish();
-	            return;
-	        }
-	        */
-			 /*
-			 //old
-			 mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-			 
-			boolean isBluetoothAvailable = commond.checkBluetooth();
-			if(!isBluetoothAvailable){
-				Toast.makeText(this, "蓝牙不可用", Toast.LENGTH_LONG).show();
-	            finish();
-	            return;
-			}
-			*/
-		  
-		  //View lock = View.inflate(this, R.layout.main, null);  
-	        //LockLayer lockLayer = new LockLayer(this);  
-	        //lockLayer.setLockView(lock);  
-	        //lockLayer.lock();  
 	}
 	
 	
@@ -338,7 +289,7 @@ public class main extends Activity
 	        	Log.e("蓝牙状态", ""+currentState);
 	        	if(currentState==12){//开
 	        		Log.e(TAG, "蓝牙开");
-	        		logs.setLogs(getApplication().getString(R.string.bluetoothisopened));
+	       // 		logs.setLogs(getApplication().getString(R.string.bluetoothisopened));
 	        		if(waitting.wattingActivity!=null)waitting.wattingActivity.onDestroy();
 					commond.isLastTask = true;
     				Intent serverIntent = new Intent(mainActivity, DeviceListActivityAuto.class);
@@ -415,6 +366,7 @@ public class main extends Activity
 					}
 				})
 		*/
+		.setCancelable(false)
 		.setPositiveButton(commond.activeContext.getString(R.string.dilog_ok),
 				new DialogInterface.OnClickListener() {
 
@@ -606,7 +558,7 @@ public class main extends Activity
 	  @Override 
     	public void run(){
     		int num = 0;
-    		String a = String.valueOf((int)(Math.random() * 10+1)) ;
+    		//String a = String.valueOf((int)(Math.random() * 10+1)) ;
     		byte[] buffer = new byte[1024];
     		byte[] buffer_new = new byte[1024];
     		int i = 0;
@@ -615,7 +567,7 @@ public class main extends Activity
     		//Log.e(TAG, "1111111111111111111111111111111");
     		//接收线程
     		while(true){
-    			if(true){
+    			//if(true){
     			try{
     				if(!commond.isConntected)return;
     				while(is.available()==0){
@@ -652,11 +604,14 @@ public class main extends Activity
     					if(InitMark.start){
     						smsg+=s;   //写入接收缓存
     					}
+
+						handler.sendMessage(handler.obtainMessage());
+
     					if(is.available()==0){
     						break;
     					}
     					//发送显示消息，进行显示刷新
-    					handler.sendMessage(handler.obtainMessage());  
+    					//handler.sendMessage(handler.obtainMessage());
     				}
     				    	    		
     	    		}catch(IOException e){
@@ -671,7 +626,7 @@ public class main extends Activity
     			//Looper.loop();
     		}
 
-    	}
+    	//}
     };
     return ReadThread;
     }

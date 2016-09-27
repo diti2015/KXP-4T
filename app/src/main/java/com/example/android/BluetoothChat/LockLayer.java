@@ -21,9 +21,9 @@ public class LockLayer {
         mLockViewLayoutParams = new LayoutParams();  
         mLockViewLayoutParams.width = LayoutParams.MATCH_PARENT;  
         mLockViewLayoutParams.height = LayoutParams.MATCH_PARENT;  
-        //实现关键  
+        //瀹炵幇鍏抽敭  
         mLockViewLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;  
-        //apktool value，这个值具体是哪个变量还请网友帮忙  
+        //apktool value锛岃繖涓�煎叿浣撴槸鍝釜鍙橀噺杩樿缃戝弸甯繖  
         mLockViewLayoutParams.flags = 1280;  
     }  
     public void lock() {  

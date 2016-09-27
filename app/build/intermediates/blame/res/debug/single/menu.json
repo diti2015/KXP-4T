@@ -1,14 +1,26 @@
 [
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/menu/main.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/menu/option_menu.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/menu/option_menu.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\setting.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\menu\\setting.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/menu/setting.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/menu/setting.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\option_menu.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\menu\\option_menu.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\option_menu.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\menu\\option_menu.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\menu\\setting.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\menu\\setting.xml"
     }
 ]

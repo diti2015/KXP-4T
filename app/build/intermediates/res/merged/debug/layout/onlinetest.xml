@@ -6,7 +6,7 @@
     <RelativeLayout
         android:id="@+id/settingTitleLayout"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
@@ -48,7 +48,7 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="180dp"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:background="#CEDCD4" >
 
@@ -69,14 +69,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/celiangEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/clearzero_en"
-                android:textColor="#000"
-                android:textSize="25sp" />
-            
         </LinearLayout>
 
         <LinearLayout
@@ -96,13 +88,6 @@
                 android:textColor="#000"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/chayueEN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/refactoryd_en"
-                android:textColor="#000"
-                android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -121,14 +106,13 @@
         android:id="@+id/onlineDipCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/onlineDip"
-        android:layout_alignBottom="@+id/onlineDip"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="50dp"
         android:paddingLeft="50dp"
         android:text="@string/dip"
-        android:textSize="30sp"
-        style="@style/MyCheckBox"   />
+        android:textSize="25sp"
+        style="@style/MyCheckBox"
+        android:layout_alignBaseline="@+id/onlineDip"
+        android:layout_alignBottom="@+id/onlineDip"
+        android:layout_alignParentLeft="true" />
 
     <CheckBox
         android:id="@+id/onlineOrientationCheck"
@@ -139,6 +123,6 @@
         android:layout_centerVertical="true"
         android:paddingLeft="50dp"
         android:text="@string/orientation"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
 </RelativeLayout>

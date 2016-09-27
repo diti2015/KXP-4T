@@ -16,7 +16,7 @@ import android.opengl.GLSurfaceView.Renderer;
 
 /**
  * Description:
- * <br/>ÍøÕ¾: <a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a> 
+ * <br/>ç½‘ç«™: <a href="http://www.crazyit.org">ç–¯ç‹‚Javaè”ç›Ÿ</a> 
  * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
  * <br/>This program is protected by copyright laws.
  * <br/>Program Name:
@@ -32,7 +32,7 @@ float rotateAngle;
 XYZVo xyz;
 int length;
   
-//¶¥µãÊı×é,GL ESÖ»ÄÜÓÃÕâ¸ö°ì·¨»­Ô²Âğ£¿  
+//é¡¶ç‚¹æ•°ç»„,GL ESåªèƒ½ç”¨è¿™ä¸ªåŠæ³•ç”»åœ†å—ï¼Ÿ  
 private float[] xpoint={52,-2,0
                         ,54,-5,0,
                         54,-2,0,
@@ -84,7 +84,7 @@ public topRenderer(XYZVo xyz) {
 }
 
 
-//¶Èµ½»¡¶ÈµÄ×ª»»  
+//åº¦åˆ°å¼§åº¦çš„è½¬æ¢  
 public float DegToRad(float deg)  
 {  
     return (float) (3.14159265358979323846 * deg / 180.0);  
@@ -95,27 +95,27 @@ public float DegToRad(float deg)
 public void onDrawFrame(GL10 gl) {  
     // TODO Auto-generated method stub  
       
-    // ½øÈëÕâ¸öº¯ÊıµÚÒ»¼şÒª×öµÄÊÂ¾ÍÊÇÇå³ıÆÁÄ»ºÍÉî¶È»º´æ  
+    // è¿›å…¥è¿™ä¸ªå‡½æ•°ç¬¬ä¸€ä»¶è¦åšçš„äº‹å°±æ˜¯æ¸…é™¤å±å¹•å’Œæ·±åº¦ç¼“å­˜  
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);  
 
-    //»­Ô²ĞÎ  
+    //ç”»åœ†å½¢  
     drawCircle(gl);  
 }  
   
 public void drawCircle(GL10 gl)  
 {  
-    //ÖØÖÃÍ¶Ó°¾ØÕó  
+    //é‡ç½®æŠ•å½±çŸ©é˜µ  
     gl.glLoadIdentity();  
-    // ÒÆ¶¯²Ù×÷£¬ÒÆÈëÆÁÄ»(ZÖá)5¸öÏñËØ, x, y , z  
+    // ç§»åŠ¨æ“ä½œï¼Œç§»å…¥å±å¹•(Zè½´)5ä¸ªåƒç´ , x, y , z  
     gl.glTranslatef(0.0f, 0.0f, -200.0f);  
       
-    //Ğı×ª, angle, x, y , z  
+    //æ—‹è½¬, angle, x, y , z  
     gl.glRotatef(rotateAngle, 1.0f, 0.0f, 0.0f);  
 
-    // ÉèÖÃµ±Ç°É«ÎªºìÉ«, R, G, B, Alpha  
+    // è®¾ç½®å½“å‰è‰²ä¸ºçº¢è‰², R, G, B, Alpha  
   
     gl.glColor4f(0.0f, 0f, 1.1f, 1.0f);  
-    //ÉèÖÃÔ²ĞÎ¶¥µãÊı¾İ£¬Õâ¸öÊÇÔÚ´´½¨Ê±Éú³É  
+    //è®¾ç½®åœ†å½¢é¡¶ç‚¹æ•°æ®ï¼Œè¿™ä¸ªæ˜¯åœ¨åˆ›å»ºæ—¶ç”Ÿæˆ  
     FloatBuffer verBuffer0 = FloatBuffer.wrap(vertices0);  
     FloatBuffer verBuffer = FloatBuffer.wrap(vertices);  
     FloatBuffer verBuffer1 = FloatBuffer.wrap(vertices1);  
@@ -125,14 +125,14 @@ public void drawCircle(GL10 gl)
     FloatBuffer verBufferline = FloatBuffer.wrap(line); 
     FloatBuffer verBufferx = FloatBuffer.wrap(x); 
     FloatBuffer verBuffery = FloatBuffer.wrap(y); 
-    //ÉèÖÃ¶¥µãÀàĞÍÎª¸¡µã×ø±ê(GL_FLOAT)£¬²»ÉèÖÃ»òÕßÉèÖÃ´íÎóÀàĞÍ½«µ¼ÖÂÍ¼ĞÎ²»ÄÜÏÔÊ¾»òÕßÏÔÊ¾´íÎó  
+    //è®¾ç½®é¡¶ç‚¹ç±»å‹ä¸ºæµ®ç‚¹åæ ‡(GL_FLOAT)ï¼Œä¸è®¾ç½®æˆ–è€…è®¾ç½®é”™è¯¯ç±»å‹å°†å¯¼è‡´å›¾å½¢ä¸èƒ½æ˜¾ç¤ºæˆ–è€…æ˜¾ç¤ºé”™è¯¯  
  
     gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(xpoint));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINES, 0, 4);  
     gl.glVertexPointer(3, GL10.GL_FLOAT, 0, bufferUtil(ypoint));  
     gl.glDrawArrays(GL10.GL_LINES, 0, 4);  
@@ -140,88 +140,88 @@ public void drawCircle(GL10 gl)
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);  
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices1));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);    
     
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices2));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);  
     
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices3));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);  
     
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices4));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);  
     
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0, bufferUtil(vertices0));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 360);  
     gl.glColor4f(1.0f, 0.1f, 0.1f, 1.0f);
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0,  bufferUtil(line));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, length/2);
    
     gl.glColor4f(0.0f, 0f, 1.1f, 1.0f); 
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0,  bufferUtil(x));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 2);
     
     gl.glColor4f(0.0f, 0f, 1.1f, 1.0f); 
     gl.glVertexPointer(2, GL10.GL_FLOAT, 0,  bufferUtil(y));  
 
-    //´ò¿ª¶¥µãÊı×é  
+    //æ‰“å¼€é¡¶ç‚¹æ•°ç»„  
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);  
       
-    //ÏòOGL·¢ËÍÊµ¼Ê»­Í¼Ö¸Áî  
+    //å‘OGLå‘é€å®é™…ç”»å›¾æŒ‡ä»¤  
     gl.glDrawArrays(GL10.GL_LINE_LOOP, 0, 2);
     
-    //¹Ø±Õ¶¥µãÊı×é¹¦ÄÜ  
+    //å…³é—­é¡¶ç‚¹æ•°ç»„åŠŸèƒ½  
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);  
 
-    //»­Í¼½áÊø  
+    //ç”»å›¾ç»“æŸ  
     gl.glFinish();  
       
-    //¸ü¸ÄĞı×ª½Ç¶È  
+    //æ›´æ”¹æ—‹è½¬è§’åº¦  
     //rotateAngle += 0.5;  
 }  
   
@@ -231,17 +231,17 @@ public void onSurfaceChanged(GL10 gl, int width, int height) {
     // TODO Auto-generated method stub  
       
     float ratio = (float) width / height;  
-    //ÉèÖÃOpenGL³¡¾°µÄ´óĞ¡  
+    //è®¾ç½®OpenGLåœºæ™¯çš„å¤§å°  
     gl.glViewport(0, 0, width, height);  
-    //ÉèÖÃÍ¶Ó°¾ØÕó  
+    //è®¾ç½®æŠ•å½±çŸ©é˜µ  
     gl.glMatrixMode(GL10.GL_PROJECTION);  
-    //ÖØÖÃÍ¶Ó°¾ØÕó  
+    //é‡ç½®æŠ•å½±çŸ©é˜µ  
     gl.glLoadIdentity();  
-    // ÉèÖÃÊÓ¿ÚµÄ´óĞ¡  
+    // è®¾ç½®è§†å£çš„å¤§å°  
     gl.glFrustumf(-ratio, ratio, -1, 1, 1, 5000);  
-    // Ñ¡ÔñÄ£ĞÍ¹Û²ì¾ØÕó  
+    // é€‰æ‹©æ¨¡å‹è§‚å¯ŸçŸ©é˜µ  
     gl.glMatrixMode(GL10.GL_MODELVIEW);      
-    // ÖØÖÃÄ£ĞÍ¹Û²ì¾ØÕó  
+    // é‡ç½®æ¨¡å‹è§‚å¯ŸçŸ©é˜µ  
     gl.glLoadIdentity();      
       
 }  
@@ -249,18 +249,18 @@ public void onSurfaceChanged(GL10 gl, int width, int height) {
 @Override  
 public void onSurfaceCreated(GL10 gl, EGLConfig config) {  
     // TODO Auto-generated method stub  
-    // ÆôÓÃÒõÓ°Æ½»¬  
+    // å¯ç”¨é˜´å½±å¹³æ»‘  
     gl.glShadeModel(GL10.GL_SMOOTH);  
-    // ºÚÉ«±³¾°  
+    // é»‘è‰²èƒŒæ™¯  
     gl.glClearColor(0, 0, 0, 0);  
-    // ÉèÖÃÉî¶È»º´æ  
+    // è®¾ç½®æ·±åº¦ç¼“å­˜  
     gl.glClearDepthf(1.0f);                              
-    // ÆôÓÃÉî¶È²âÊÔ  
+    // å¯ç”¨æ·±åº¦æµ‹è¯•  
     gl.glEnable(GL10.GL_DEPTH_TEST);                          
-    // Ëù×÷Éî¶È²âÊÔµÄÀàĞÍ  
+    // æ‰€ä½œæ·±åº¦æµ‹è¯•çš„ç±»å‹  
     gl.glDepthFunc(GL10.GL_LEQUAL);                              
       
-    // ¸æËßÏµÍ³¶ÔÍ¸ÊÓ½øĞĞĞŞÕı  
+    // å‘Šè¯‰ç³»ç»Ÿå¯¹é€è§†è¿›è¡Œä¿®æ­£  
     gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST);  
       
 
@@ -277,9 +277,9 @@ public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 public Buffer bufferUtil(int []arr){  
     IntBuffer mBuffer ;  
       
-    //ÏÈ³õÊ¼»¯buffer,Êı×éµÄ³¤¶È*4,ÒòÎªÒ»¸öintÕ¼4¸ö×Ö½Ú  
+    //å…ˆåˆå§‹åŒ–buffer,æ•°ç»„çš„é•¿åº¦*4,å› ä¸ºä¸€ä¸ªintå 4ä¸ªå­—èŠ‚  
    ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 4);  
-   //Êı×éÅÅÁĞÓÃnativeOrder  
+   //æ•°ç»„æ’åˆ—ç”¨nativeOrder  
     qbb.order(ByteOrder.nativeOrder());  
      
     mBuffer = qbb.asIntBuffer();  
@@ -292,9 +292,9 @@ public Buffer bufferUtil(int []arr){
 public Buffer bufferUtil(float []arr){  
 	FloatBuffer mBuffer ;  
       
-    //ÏÈ³õÊ¼»¯buffer,Êı×éµÄ³¤¶È*4,ÒòÎªÒ»¸öintÕ¼4¸ö×Ö½Ú  
+    //å…ˆåˆå§‹åŒ–buffer,æ•°ç»„çš„é•¿åº¦*4,å› ä¸ºä¸€ä¸ªintå 4ä¸ªå­—èŠ‚  
    ByteBuffer qbb = ByteBuffer.allocateDirect(arr.length * 8);  
-   //Êı×éÅÅÁĞÓÃnativeOrder  
+   //æ•°ç»„æ’åˆ—ç”¨nativeOrder  
     qbb.order(ByteOrder.nativeOrder());  
      
     mBuffer = qbb.asFloatBuffer();  

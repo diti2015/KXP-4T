@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="正在查找设备"
+        android:text="@string/CheckDeivce"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:layout_marginLeft="10dp" />

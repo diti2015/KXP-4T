@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/BluetoothChat.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/DeviceListActivityAuto.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/InitMark.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/KeepService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/LockLayer.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/Mark.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/Online.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/Progress.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/RWfile.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/Setting.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/commond.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/logs.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/android/BluetoothChat/waitting.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/justsy/bluetooth/test123.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/throne/digtool/Draw3D.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/throne/digtool/MainActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/throne/digtool/Xlsmake.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/throne/digtool/sideRenderer.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/throne/digtool/topRenderer.java" charset="GBK" />
+  <component name="Encoding">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

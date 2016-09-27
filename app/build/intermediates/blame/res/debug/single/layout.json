@@ -1,82 +1,162 @@
 [
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/initmark.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/initmark.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waitting.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\waitting.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/tesy123.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/tesy123.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\logs.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\logs.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/message.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/message.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\progress.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/device_connect.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/device_connect.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_connect.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\device_connect.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/logs.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/logs.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/device_list.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/device_list.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tesy123.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\tesy123.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/device_name.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/device_name.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\initmark.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\initmark.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/activity_3d.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/activity_3d.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\onlinetest.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\onlinetest.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/sliding.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/sliding.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\custom_title.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/custom_title.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/custom_title.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setting.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\setting.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/waitting.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/waitting.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\progress.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\progress.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/setting.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/setting.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mark.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\mark.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/onlinetest.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/onlinetest.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\first.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\first.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/activity_main.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\waitting.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\waitting.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/first.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/first.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_title.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\custom_title.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/mark.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/mark.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\digital.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\digital.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/main.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/main.xml"
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\array_item.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\array_item.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/array_item.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/array_item.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\message.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/progress.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/progress.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sliding.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\sliding.xml"
     },
     {
-        "merged": "/home/diti/AndroidStudioProjects/BluetoothChat/app/build/intermediates/res/merged/debug/layout/digital.xml",
-        "source": "/home/diti/AndroidStudioProjects/BluetoothChat/app/src/main/res/layout/digital.xml"
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_3d.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\activity_3d.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\logs.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\logs.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\array_item.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\array_item.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\sliding.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\sliding.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\device_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_list.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\device_list.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_3d.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\activity_3d.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_connect.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\device_connect.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tesy123.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\tesy123.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\onlinetest.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\onlinetest.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mark.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\mark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\message.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\device_name.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\first.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\first.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setting.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\digital.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\digital.xml"
+    },
+    {
+        "merged": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\initmark.xml",
+        "source": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\layout\\initmark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\layout\\device_name.xml",
+        "source": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\layout\\device_name.xml"
     }
 ]

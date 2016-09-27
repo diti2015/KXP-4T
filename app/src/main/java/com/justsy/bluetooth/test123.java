@@ -9,13 +9,13 @@ import java.util.Map;
 public class test123 {  
   
     public static void main(String[] args) throws Exception {  
-        String[] sr = new String[]{"序号#seq,问题#question,答案#ans","1,问题1,abc","2,问题2,def"};  
+        String[] sr = new String[]{"搴忓彿#seq,闂#question,绛旀#ans","1,闂1,abc","2,闂2,def"};  
         buildT(test123.class, sr);
     }  
       
     public static <T> void buildT(Class clazz, String[] sr) throws Exception {
-        String[] sa = sr[0].split(";");  
-        String s = null;  
+        String[] sa = sr[0].split(";");
+        String s;
         Map<Integer, String> map = new HashMap<Integer, String>();  
         for(int i = 0, len = sa.length; i < len; i++){  
             s = sa[i];  

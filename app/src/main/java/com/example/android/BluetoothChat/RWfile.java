@@ -26,13 +26,12 @@ public class RWfile {
 
 	
 	public static String readFile(String fileName,Context context) throws IOException{   
-	  String res="";   
-	  
+	  String res="";
 	  try{   
 	         FileInputStream fin = context.openFileInput(fileName);
 	         int length = fin.available();   
 	         byte [] buffer = new byte[length];   
-	         fin.read(buffer);       
+	         fin.read(buffer);
 	         res = EncodingUtils.getString(buffer, "UTF-8");   
 	         fin.close();       
 	     }   
@@ -65,16 +64,16 @@ public class RWfile {
 	       }   
 	}   
 	
-	//¶Áassets
+	//è¯»assets
 	public static String read(String fileName,Context context){
-		//String fileName = "config.txt"; //ÎÄ¼şÃû×Ö 
-		String res=""; 
+		//String fileName = "config.txt"; //æ–‡ä»¶åå­— 
+		String res="";
 		try{ 
-		   //µÃµ½×ÊÔ´ÖĞµÄassetÊı¾İÁ÷
+		   //å¾—åˆ°èµ„æºä¸­çš„assetæ•°æ®æµ
 		   InputStream in = context.getResources().getAssets().open(fileName); 
 		   int length = in.available();         
 		   byte [] buffer = new byte[length];        
-		   in.read(buffer);            
+		   in.read(buffer);
 		   in.close();
 		   res = EncodingUtils.getString(buffer, "UTF-8");
 		   if(commond.D)Log.e("TAG", res);

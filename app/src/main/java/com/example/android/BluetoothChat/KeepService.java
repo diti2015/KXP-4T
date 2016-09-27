@@ -19,7 +19,7 @@ public class KeepService extends Service  {
 	
 	@Override  
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		if(commond.D)Log.e(TAG, "·¢ËÍ¹ã²¥:"+commond.retryNum);
+		if(commond.D)Log.e(TAG, "å‘é€å¹¿æ’­:"+commond.retryNum);
 		
 		if(commond.reallyTimer){
 			if(commond.isConntected){
@@ -27,12 +27,12 @@ public class KeepService extends Service  {
 					if(commond.D)Log.e(TAG, ""+commond.instruction.get(0));
 					commond.instruction.remove(0);
 				}
-				commond.retryNum = commond.retryNum + 1;//Éè±¸Ã»ÓĞÅ×³öÒì³££¬¾Í¼ÆËãÖØ¸´´ÎÊı£¬³¬¹ıÁ½´ÎÊÖ¶¯¶Ï¿ªÁ¬½Ó
+				commond.retryNum = commond.retryNum + 1;//è®¾å¤‡æ²¡æœ‰æŠ›å‡ºå¼‚å¸¸ï¼Œå°±è®¡ç®—é‡å¤æ¬¡æ•°ï¼Œè¶…è¿‡ä¸¤æ¬¡æ‰‹åŠ¨æ–­å¼€è¿æ¥
 			}
 			else {
 				commond.stopKeepService();
 			}
-			if(commond.retryNum>2){//³¬¹ıÁ½´Î¸Ä±äµÆÑÕÉ«
+			if(commond.retryNum>2){//è¶…è¿‡ä¸¤æ¬¡æ”¹å˜ç¯é¢œè‰²
 				commond.connectionLost();
 				commond.setDeviceType(3);
 				
