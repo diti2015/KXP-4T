@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/diti/AndroidStudioProjects/KXP-4T/app/build/intermediates/res/merged/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "outputFile": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,31 @@
                     "endOffset": 109
                 },
                 "from": {
-                    "file": "/home/diti/AndroidStudioProjects/KXP-4T/app/src/main/res/values-sw720dp-land/dimens.xml",
+                    "file": "C:\\home\\diti\\AndroidStudioProjects\\KXP-4T\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 205,
+                        "endColumn": 58,
+                        "endOffset": 259
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\Documents\\GitHub\\KXP-4T\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
